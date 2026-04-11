@@ -1,0 +1,47 @@
+.expirado-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background: var(--bg-primary);
+}
+
+.expirado-page__content {
+  max-width: 420px;
+  text-align: center;
+}
+
+.expirado-page__icon {
+  font-size: 64px;
+  margin-bottom: var(--space-md);
+}
+
+.expirado-page__title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.expirado-page__text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.expirado-page__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.expirado-page__footer {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--text-light);
+  font-style: italic;
+}

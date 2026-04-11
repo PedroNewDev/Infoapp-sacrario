@@ -1,0 +1,174 @@
+.dia-page__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.dia-page__back {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--gold-primary);
+  padding: 8px;
+}
+
+.dia-page__header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.dia-page__ornament {
+  color: var(--gold-light);
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+
+.dia-page__dia {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.dia-page__titulo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--gold-primary);
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.dia-page__misterio {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+}
+
+.dia-page__imagem {
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.dia-page__imagem-placeholder {
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  border-radius: var(--radius-lg);
+  border: var(--border-light);
+}
+
+.dia-page__reflexao {
+  margin: var(--space-xl) 0;
+}
+
+.dia-page__reflexao h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  font-style: italic;
+}
+
+.dia-page__reflexao p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  text-align: justify;
+}
+
+.dia-page__intencao {
+  margin-top: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.dia-page__intencao h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.dia-page__intencao-field {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.dia-page__intencao-icon {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.dia-page__intencao-field textarea {
+  flex: 1;
+  padding: 12px 14px;
+  border: var(--border-gold);
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.5;
+  resize: none;
+}
+.dia-page__intencao-field textarea:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(201, 147, 42, 0.15);
+}
+
+.dia-page__intencao-count {
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: right;
+}
+
+.dia-page__intencao-salva {
+  color: var(--gold-primary);
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+}
+
+.dia-page__hint {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  font-style: italic;
+  margin-top: var(--space-lg);
+  line-height: 1.5;
+}
+
+/* Celebração */
+.dia-page__celebration {
+  position: fixed;
+  inset: 0;
+  background: rgba(245, 237, 214, 0.95);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dia-page__celebration-content {
+  text-align: center;
+  color: var(--gold-primary);
+}
+
+.dia-page__celebration-content h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  margin: var(--space-md) 0;
+}
+
+.dia-page__celebration-content p {
+  color: var(--text-secondary);
+  font-size: 15px;
+}

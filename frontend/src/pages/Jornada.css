@@ -1,0 +1,86 @@
+.jornada-page__title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--gold-primary);
+  text-align: center;
+}
+
+.jornada-page__bloco {
+  margin-bottom: var(--space-xl);
+}
+
+.jornada-page__bloco-nome {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.jornada-page__bloco-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: var(--space-md);
+}
+
+.jornada-page__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.jornada-page__dia {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.jornada-page__dia--concluido {
+  background: rgba(201, 147, 42, 0.15);
+  border-color: var(--gold-primary);
+}
+
+.jornada-page__dia--atual {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(201, 147, 42, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.jornada-page__dia--disponivel {
+  border-color: var(--gold-light);
+}
+
+.jornada-page__dia--bloqueado {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.jornada-page__check {
+  font-size: 14px;
+  color: var(--gold-primary);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.jornada-page__lock {
+  font-size: 12px;
+}
+
+.jornada-page__num {
+  font-size: 12px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.jornada-page__dia--concluido .jornada-page__num {
+  font-size: 10px;
+  color: var(--text-secondary);
+}

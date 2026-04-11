@@ -1,0 +1,123 @@
+.biblioteca-page__intro {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.biblioteca-page__icon {
+  font-size: 48px;
+  margin-bottom: var(--space-sm);
+}
+
+.biblioteca-page__title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-xs);
+}
+
+/* Seções colapsáveis */
+.biblioteca-section {
+  margin-bottom: var(--space-md);
+}
+
+.biblioteca-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--bg-card);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.biblioteca-section__header:hover {
+  background: rgba(201, 147, 42, 0.06);
+}
+
+.biblioteca-section__header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.biblioteca-section__header-icon {
+  font-size: 24px;
+}
+
+.biblioteca-section__header-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.biblioteca-section__header-count {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-left: var(--space-xs);
+}
+
+.biblioteca-section__chevron {
+  font-size: 14px;
+  color: var(--gold-primary);
+  transition: transform 0.3s;
+}
+
+.biblioteca-section__chevron--open {
+  transform: rotate(180deg);
+}
+
+.biblioteca-section__content {
+  padding: var(--space-sm) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Cards de oração */
+.biblioteca-card {
+  background: var(--bg-card);
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.biblioteca-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  cursor: pointer;
+}
+
+.biblioteca-card__titulo {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--gold-dark);
+}
+
+.biblioteca-card__santo {
+  font-size: 12px;
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.biblioteca-card__toggle {
+  font-size: 12px;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.biblioteca-card__texto {
+  padding: 0 var(--space-md) var(--space-md);
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  white-space: pre-line;
+  border-top: var(--border-light);
+  padding-top: var(--space-md);
+}
+

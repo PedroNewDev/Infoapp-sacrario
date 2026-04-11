@@ -1,0 +1,94 @@
+.sparkle-btn {
+  position: relative;
+  overflow: visible;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 28px;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold-gradient);
+  color: var(--text-on-gold);
+  border: none;
+  cursor: pointer;
+  min-height: 52px;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 4px 16px rgba(185, 134, 11, 0.38);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.sparkle-btn--full {
+  width: 100%;
+}
+
+/* Desktop hover */
+@media (hover: hover) {
+  .sparkle-btn:hover {
+    box-shadow: 0 6px 22px rgba(201, 147, 42, 0.55);
+    transform: translateY(-2px);
+  }
+}
+
+/* Toque — feedback imediato e satisfatório */
+.sparkle-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(185, 134, 11, 0.25);
+}
+
+/* Partículas ✦ — efeito progressivo (desktop com hover) */
+.sparkle-btn__p {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1;
+  color: #d4a843;
+  filter: drop-shadow(0 0 0 rgba(201, 147, 42, 0));
+  transition-property: top, left, opacity, filter;
+  transition-timing-function: cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+/* Posições iniciais */
+.sp-1 { top: 38%; left: 18%; font-size: 20px; transition-duration: 900ms; }
+.sp-2 { top: 46%; left: 46%; font-size: 11px; transition-duration: 900ms; }
+.sp-3 { top: 42%; left: 42%; font-size: 7px;  transition-duration: 900ms; }
+.sp-4 { top: 22%; left: 42%; font-size: 10px; transition-duration: 750ms; }
+.sp-5 { top: 28%; left: 52%; font-size: 15px; transition-duration: 600ms; }
+.sp-6 { top: 6%;  left: 56%; font-size: 7px;  transition-duration: 800ms; }
+
+/* Partículas voam apenas em dispositivos com hover real */
+@media (hover: hover) {
+  .sparkle-btn:hover .sp-1 {
+    top: -75%; left: -25%;
+    opacity: 1;
+    filter: drop-shadow(0 0 7px rgba(201, 147, 42, 0.95));
+  }
+  .sparkle-btn:hover .sp-2 {
+    top: -35%; left: 8%;
+    opacity: 1;
+    filter: drop-shadow(0 0 5px rgba(201, 147, 42, 0.85));
+  }
+  .sparkle-btn:hover .sp-3 {
+    top: 65%; left: 22%;
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(201, 147, 42, 0.75));
+  }
+  .sparkle-btn:hover .sp-4 {
+    top: 32%; left: 88%;
+    opacity: 1;
+    filter: drop-shadow(0 0 5px rgba(201, 147, 42, 0.85));
+  }
+  .sparkle-btn:hover .sp-5 {
+    top: 18%; left: 118%;
+    opacity: 1;
+    filter: drop-shadow(0 0 7px rgba(201, 147, 42, 0.9));
+  }
+  .sparkle-btn:hover .sp-6 {
+    top: 2%; left: 66%;
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(201, 147, 42, 0.75));
+  }
+}

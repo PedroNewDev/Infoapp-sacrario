@@ -1,0 +1,291 @@
+.home__welcome {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.home__greeting {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--gold-primary);
+  margin-top: var(--space-sm);
+}
+
+.home__subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+}
+
+.home__day {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+/* Grid de cards */
+.home__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.home__card {
+  background: var(--bg-card);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s;
+  position: relative;
+  min-height: 110px;
+  justify-content: center;
+}
+.home__card:hover:not(:disabled) {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+.home__card--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.home__card-icon {
+  font-size: 32px;
+}
+
+.home__card-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.home__card-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--gold-light);
+  color: var(--text-primary);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Destaque promocional — Biblioteca de Áudios Sagrados (discreto) */
+.home__audio-promo {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 244, 0.92) 0%, rgba(250, 240, 215, 0.92) 100%),
+    var(--bg-card);
+  border: 1px solid rgba(201, 147, 42, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  box-shadow: 0 3px 10px rgba(201, 147, 42, 0.12);
+  overflow: hidden;
+}
+
+.home__audio-promo-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.home__audio-promo-icon {
+  font-size: 26px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.home__audio-promo-head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.home__audio-promo-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--gold-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.home__audio-promo-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.home__audio-promo-player {
+  margin-bottom: var(--space-sm);
+}
+
+.home__audio-promo-cta {
+  display: block;
+  margin: var(--space-sm) auto 0;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #c9932a 0%, #e0b555 50%, #c9932a 100%);
+  background-size: 200% auto;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(201, 147, 42, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: background-position 0.4s, transform 0.2s, box-shadow 0.2s;
+}
+.home__audio-promo-cta:hover {
+  background-position: right center;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201, 147, 42, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Atalho quando já desbloqueado */
+.home__audio-unlocked {
+  width: 100%;
+  background: var(--bg-card);
+  border: var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--space-lg);
+  transition: all 0.2s;
+  text-align: left;
+}
+.home__audio-unlocked:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-1px);
+}
+.home__audio-unlocked-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+.home__audio-unlocked-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.home__audio-unlocked-text strong {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--gold-dark);
+}
+.home__audio-unlocked-text span {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Card Limpeza */
+.home__limpeza {
+  width: 100%;
+  background: var(--bg-card);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--space-lg);
+  transition: all 0.2s;
+}
+.home__limpeza:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.home__limpeza-icon {
+  font-size: 28px;
+}
+
+.home__limpeza-text {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.home__limpeza-lock {
+  font-size: 14px;
+}
+
+/* Intenção */
+.home__intencao {
+  background: var(--bg-card);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.home__intencao-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.home__intencao-edit-icon {
+  margin-left: auto;
+  color: var(--gold-primary);
+}
+
+.home__intencao-edit {
+  display: flex;
+  gap: var(--space-sm);
+}
+.home__intencao-edit input {
+  flex: 1;
+  padding: 8px 12px;
+  border: var(--border-gold);
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+.home__intencao-edit button {
+  background: var(--gold-primary);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  font-size: 18px;
+}
+
+/* Banner expiração */
+.home__expiracao {
+  background: rgba(160, 82, 45, 0.08);
+  border: 1px solid rgba(160, 82, 45, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+  font-size: 13px;
+  color: #8B4513;
+}

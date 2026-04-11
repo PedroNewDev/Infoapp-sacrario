@@ -1,0 +1,192 @@
+/* =============================================
+   Sacrário do Rosário — Design System
+   ============================================= */
+
+:root {
+  /* Fundos */
+  --bg-primary: #F5EDD6;
+  --bg-secondary: #EDE0C4;
+  --bg-card: #FAF6EE;
+  --bg-input: #FFF9F0;
+
+  /* Dourados */
+  --gold-primary: #C9932A;
+  --gold-dark: #B8860B;
+  --gold-light: #E8C97A;
+  --gold-gradient: linear-gradient(135deg, #D4A843 0%, #B8860B 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #E8C97A 0%, #C9932A 100%);
+
+  /* Textos */
+  --text-primary: #3D2B1A;
+  --text-secondary: #7A5C3A;
+  --text-light: #A08060;
+  --text-on-gold: #FFF9F0;
+
+  /* Sombras */
+  --shadow-soft: 0 2px 8px rgba(185, 134, 11, 0.1);
+  --shadow-card: 0 4px 16px rgba(185, 134, 11, 0.12);
+  --shadow-elevated: 0 8px 24px rgba(185, 134, 11, 0.16);
+
+  /* Bordas */
+  --border-light: 1px solid rgba(201, 147, 42, 0.15);
+  --border-gold: 1px solid rgba(201, 147, 42, 0.3);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 50%;
+
+  /* Fontes */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+
+  /* Espaçamentos */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Tab bar */
+  --tab-height: 64px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--gold-primary);
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, textarea {
+  font-family: var(--font-body);
+  font-size: 16px; /* Previne zoom no iOS */
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Scrollbar estilizada */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-light);
+  border-radius: 4px;
+}
+
+/* Seleção de texto */
+::selection {
+  background: rgba(201, 147, 42, 0.25);
+  color: var(--text-primary);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  25% { opacity: 0.9; transform: scaleY(0.97); }
+  50% { opacity: 1; transform: scaleY(1.02); }
+  75% { opacity: 0.95; transform: scaleY(0.99); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Loading dourado */
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--bg-secondary);
+  border-top-color: var(--gold-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Ornamento separador */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--gold-light);
+  font-size: 14px;
+  margin: var(--space-md) 0;
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+}
+
+/* Container padrão mobile-first */
+.page-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-md);
+  padding-bottom: calc(var(--tab-height) + var(--space-lg));
+}

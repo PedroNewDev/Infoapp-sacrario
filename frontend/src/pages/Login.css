@@ -1,0 +1,116 @@
+.login-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.login-page__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center top, rgba(232, 201, 122, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.login-page__content {
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  z-index: 1;
+}
+
+.login-page__logo {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.login-page__icon {
+  font-size: 48px;
+  color: var(--gold-primary);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.login-page__title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--gold-primary);
+}
+
+.login-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.login-page__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-page__field label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.login-page__field input {
+  width: 100%;
+  padding: 14px 16px;
+  border: var(--border-gold);
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-page__field input:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(201, 147, 42, 0.15);
+}
+
+.login-page__field input::placeholder {
+  color: var(--text-light);
+}
+
+.login-page__erro {
+  color: #A0522D;
+  font-size: 14px;
+  text-align: center;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(160, 82, 45, 0.08);
+  border-radius: var(--radius-sm);
+}
+
+.login-page__link {
+  background: none;
+  border: none;
+  color: var(--gold-primary);
+  font-size: 14px;
+  text-align: center;
+  padding: var(--space-sm);
+  cursor: pointer;
+}
+.login-page__link:hover {
+  text-decoration: underline;
+}
+
+.login-page__reset-msg {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.login-page__reset-msg p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

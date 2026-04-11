@@ -1,0 +1,132 @@
+.limpeza-page__intro {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.limpeza-page__icon {
+  font-size: 48px;
+  margin-bottom: var(--space-sm);
+}
+
+.limpeza-page__title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.limpeza-page__subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Conteúdo completo (desbloqueado) */
+.limpeza-page__conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.limpeza-page__secao-titulo {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--gold-dark);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.limpeza-page__texto {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  white-space: pre-line;
+  background: var(--bg-card);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.limpeza-page__audio-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  background: rgba(201, 147, 42, 0.08);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--gold-primary);
+  border: 1px dashed var(--gold-primary);
+}
+
+/* Paywall (bloqueado) */
+.limpeza-page__paywall {
+  text-align: center;
+}
+
+.limpeza-page__paywall-descricao {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.limpeza-page__preview {
+  position: relative;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.limpeza-page__preview-text {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  white-space: pre-line;
+  background: var(--bg-card);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.limpeza-page__preview-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(transparent, var(--bg-primary));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: var(--space-md);
+}
+
+.limpeza-page__preview-lock {
+  font-size: 28px;
+}
+
+.limpeza-page__beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  text-align: left;
+}
+
+.limpeza-page__beneficio {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.limpeza-page__beneficio span:first-child {
+  flex-shrink: 0;
+  color: var(--gold-primary);
+}

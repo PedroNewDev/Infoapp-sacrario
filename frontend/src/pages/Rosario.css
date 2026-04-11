@@ -1,0 +1,403 @@
+/* Rosário Virtual */
+.rosario-page__title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--gold-primary);
+  text-align: center;
+}
+
+.rosario-page__contador {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+/* Seletor de Mistérios */
+.rosario-page__misterios {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--space-lg);
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rosario-page__misterio-btn {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: var(--border-light);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.rosario-page__misterio-btn--active {
+  background: var(--gold-gradient);
+  color: var(--text-on-gold);
+  border-color: var(--gold-primary);
+}
+
+/* Área do mistério atual */
+.rosario-page__misterio-info {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.rosario-page__misterio-nome {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.rosario-page__misterio-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Progresso da dezena */
+.rosario-page__dezena-progresso {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: var(--space-md);
+}
+
+.rosario-page__dezena-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  transition: background 0.3s;
+}
+.rosario-page__dezena-dot--done {
+  background: var(--gold-primary);
+}
+.rosario-page__dezena-dot--current {
+  background: var(--gold-light);
+  box-shadow: 0 0 0 3px rgba(201, 147, 42, 0.2);
+}
+
+/* Contas do Rosário */
+.rosario-page__contas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+}
+
+.rosario-page__conta {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-light);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.3s;
+}
+.rosario-page__conta--rezada {
+  background: rgba(201, 147, 42, 0.15);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+}
+.rosario-page__conta--atual {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 4px rgba(201, 147, 42, 0.2);
+  animation: pulse 2s infinite;
+  transform: scale(1.1);
+}
+.rosario-page__conta--grande {
+  width: 48px;
+  height: 48px;
+  border-width: 3px;
+  font-size: 13px;
+}
+
+/* Oração atual */
+.rosario-page__oracao {
+  background: var(--bg-card);
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.rosario-page__oracao-nome {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.rosario-page__oracao-texto {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+/* Botão de avançar */
+.rosario-page__avancar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.rosario-page__avancar-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-elevated);
+  transition: all 0.2s;
+}
+.rosario-page__avancar-btn:active {
+  transform: scale(0.95);
+}
+.rosario-page__avancar-btn svg {
+  color: var(--text-on-gold);
+}
+
+/* Status / progresso geral */
+.rosario-page__status {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+/* Tela de conclusão */
+.rosario-page__conclusao {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rosario-page__conclusao h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.rosario-page__conclusao-frase {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+/* Selo dourado animado */
+.rosario-page__selo-conclusao {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto var(--space-lg);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+  box-shadow: 0 0 30px rgba(201, 147, 42, 0.35), 0 0 60px rgba(201, 147, 42, 0.15);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Stats */
+.rosario-page__conclusao-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.rosario-page__conclusao-stat {
+  background: var(--bg-card);
+  border: var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-sm);
+}
+
+.rosario-page__conclusao-stat-valor {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--gold-primary);
+}
+
+.rosario-page__conclusao-stat-label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+/* Total box */
+.rosario-page__conclusao-total-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: rgba(201, 147, 42, 0.08);
+  border-radius: var(--radius-lg);
+  border: var(--border-gold);
+  margin-bottom: var(--space-lg);
+}
+
+.rosario-page__conclusao-total-box span {
+  font-size: 24px;
+}
+
+.rosario-page__conclusao-total-box p {
+  font-size: 15px;
+  color: var(--gold-dark);
+  margin: 0;
+}
+
+.rosario-page__conclusao-total-box strong {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--gold-primary);
+}
+
+/* Citação */
+.rosario-page__conclusao-mensagem {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.rosario-page__conclusao-autor {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: var(--space-lg);
+}
+
+/* Ações */
+.rosario-page__conclusao-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Oferta */
+.rosario-page__oferta {
+  background: linear-gradient(135deg, rgba(201, 147, 42, 0.08), rgba(201, 147, 42, 0.03));
+  border: var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.rosario-page__oferta-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.rosario-page__oferta-titulo {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--gold-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.rosario-page__oferta-texto {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+/* Partículas douradas */
+.rosario-page__particulas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.rosario-page__particula {
+  position: absolute;
+  top: -20px;
+  font-size: 14px;
+  color: var(--gold-primary);
+  opacity: 0;
+  animation: cair 4s ease-in infinite;
+}
+
+@keyframes cair {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(calc(100vh)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Seletor de modo */
+.rosario-page__modo {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.rosario-page__modo-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: var(--border-light);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  transition: all 0.2s;
+}
+.rosario-page__modo-btn--active {
+  background: rgba(201, 147, 42, 0.1);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  font-weight: 600;
+}
+
+/* Mistério destaque da jornada */
+.rosario-page__oracao--destaque {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 2px rgba(201, 147, 42, 0.2), var(--shadow-card);
+  background: rgba(201, 147, 42, 0.05);
+}
+
+/* Conjunto concluído */
+.rosario-page__misterio-btn--done {
+  opacity: 0.6;
+  background: rgba(201, 147, 42, 0.08);
+}
