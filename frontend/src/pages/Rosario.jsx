@@ -4,6 +4,7 @@ import api from '../services/api';
 import { useUser } from '../context/UserContext';
 import Header from '../components/layout/Header';
 import Button from '../components/ui/Button';
+import ConversionCard from '../components/ui/ConversionCard';
 import { misterios, ordemConjuntos, gerarContasConjunto } from '../content/oracoes';
 import './Rosario.css';
 
@@ -159,19 +160,10 @@ export default function Rosario() {
             </p>
             <p className="rosario-page__conclusao-autor">— São Luís de Montfort</p>
 
-            {/* Oferta — só aparece se não tem acesso vitalício */}
-            {!usuario?.acesso_vitalicio && (
-              <div className="rosario-page__oferta fade-in">
-                <span className="rosario-page__oferta-icon">👑</span>
-                <h3 className="rosario-page__oferta-titulo">Continue rezando para sempre</h3>
-                <p className="rosario-page__oferta-texto">
-                  Garanta seu acesso vitalício ao Sacrário e nunca perca seu progresso, suas intenções e seus rosários.
-                </p>
-                <Button onClick={() => window.open('https://pay.exemplo.com.br/vitalicio', '_blank')} fullWidth>
-                  GARANTIR ACESSO VITALÍCIO »
-                </Button>
-              </div>
-            )}
+            {/* Card de conversão pós-rosário */}
+            <div style={{ marginTop: 'var(--space-md)' }}>
+              <ConversionCard variante="pos-rosario" />
+            </div>
 
             <div className="rosario-page__conclusao-acoes">
               {fromJornada ? (

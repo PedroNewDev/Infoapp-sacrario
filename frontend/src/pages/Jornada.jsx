@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../context/UserContext';
 import api from '../services/api';
 import Header from '../components/layout/Header';
 import './Jornada.css';
@@ -7,6 +8,7 @@ import './Jornada.css';
 export default function Jornada() {
   const [progresso, setProgresso] = useState(null);
   const navigate = useNavigate();
+  const { usuario } = useUser();
 
   useEffect(() => {
     api.get('/jornada/progresso').then(r => setProgresso(r.data)).catch(() => {});
@@ -67,6 +69,30 @@ export default function Jornada() {
             </div>
           </div>
         ))}
+
+        {/* Mistérios Extras — conteúdo bloqueado pós-jornada */}
+        {progresso?.jornadaCompleta && !usuario?.acesso_vitalicio && (
+          <div className="jornada-page__extras fade-in">
+            <h3 className="jornada-page__extras-title">Mistérios Extras</h3>
+            <p className="jornada-page__extras-sub">Conteúdos exclusivos para consagradas</p>
+
+            {['Oração de Entrega Total', 'Meditação dos 7 Dons', 'Consagração Perpétua'].map((titulo, i) => (
+              <div key={i} className="jornada-page__extra-card">
+                <span className="jornada-page__extra-lock">🔒</span>
+                <div className="jornada-page__extra-info">
+                  <strong>{titulo}</strong>
+                  <span>Este mistério aguarda sua consagração eterna</span>
+                </div>
+                <button
+                  className="jornada-page__extra-cta"
+                  onClick={() => navigate('/consagracao-eterna')}
+                >
+                  Desbloquear
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

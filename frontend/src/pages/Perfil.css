@@ -1,0 +1,317 @@
+.perfil-page__title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--gold-dark);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+/* Card do Usuário */
+.perfil-page__user-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.perfil-page__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.perfil-page__user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.perfil-page__nome {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.perfil-page__membro {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.perfil-page__streak-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(201, 147, 42, 0.12);
+  border: 1px solid rgba(201, 147, 42, 0.2);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--gold-dark);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Stats Grid */
+.perfil-page__stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: var(--space-lg);
+}
+
+.perfil-page__stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.perfil-page__stat-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.perfil-page__stat-data {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.perfil-page__stat-valor {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+}
+
+.perfil-page__stat-total {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-left: 2px;
+}
+
+.perfil-page__stat-label {
+  font-size: 11px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.perfil-page__stat-bar-wrap {
+  width: 100%;
+  height: 3px;
+  background: rgba(201, 147, 42, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.perfil-page__stat-bar {
+  height: 100%;
+  background: var(--gold-primary);
+  border-radius: 2px;
+  transition: width 0.8s ease;
+}
+
+/* Velas */
+.perfil-page__velas-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.perfil-page__section-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.perfil-page__velas-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.perfil-page__vela {
+  width: 24px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 4px;
+  background: rgba(201, 147, 42, 0.04);
+  color: var(--text-light);
+  opacity: 0.3;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.perfil-page__vela--acesa {
+  opacity: 1;
+  background: rgba(201, 147, 42, 0.1);
+  transform: scale(1.05);
+}
+
+.perfil-page__velas-legenda {
+  font-size: 11px;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: var(--space-xs);
+}
+
+/* Conquistas */
+.perfil-page__conquistas-section {
+  margin-bottom: var(--space-lg);
+}
+
+.perfil-page__conquistas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.perfil-page__conquista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: var(--space-sm) 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  opacity: 0.45;
+  transition: opacity 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.perfil-page__conquista--desbloqueada {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(201, 147, 42, 0.12) 0%, rgba(184, 134, 11, 0.08) 100%);
+  border-color: rgba(201, 147, 42, 0.3);
+}
+
+.perfil-page__conquista-icone {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.perfil-page__conquista--desbloqueada .perfil-page__conquista-icone {
+  filter: drop-shadow(0 0 4px rgba(201, 147, 42, 0.4));
+}
+
+.perfil-page__conquista-nome {
+  font-size: 10px;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.perfil-page__conquista-desc {
+  font-size: 9px;
+  color: var(--text-light);
+  line-height: 1.2;
+}
+
+/* Histórico */
+.perfil-page__historico-section {
+  margin-bottom: var(--space-lg);
+}
+
+.perfil-page__historico-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.perfil-page__historico-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.perfil-page__historico-item:last-child {
+  border-bottom: none;
+}
+
+.perfil-page__historico-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201, 147, 42, 0.08);
+  border-radius: 50%;
+}
+
+.perfil-page__historico-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.perfil-page__historico-desc {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.perfil-page__historico-data {
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+.perfil-page__historico-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(76, 175, 80, 0.12);
+  color: #4caf50;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Logout */
+.perfil-page__logout {
+  width: 100%;
+  padding: var(--space-md);
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-light);
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: var(--space-xl);
+  transition: background 0.2s;
+}
+
+.perfil-page__logout:active {
+  background: rgba(0, 0, 0, 0.03);
+}

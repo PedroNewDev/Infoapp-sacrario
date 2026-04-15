@@ -10,6 +10,7 @@ const jornadaRoutes = require('./routes/jornada');
 const rosarioRoutes = require('./routes/rosario');
 const pedidosRoutes = require('./routes/pedidos');
 const velasRoutes = require('./routes/velas');
+const perfilRoutes = require('./routes/perfil');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -18,6 +19,7 @@ const PORT = process.env.PORT || 3001;
 const allowedOrigins = [
   process.env.FRONTEND_URL,
   'http://localhost:5173',
+  'http://localhost:5176',
 ].filter(Boolean);
 
 app.use(cors({
@@ -47,6 +49,7 @@ app.use('/api/jornada', jornadaRoutes);
 app.use('/api/rosario', rosarioRoutes);
 app.use('/api/pedidos', pedidosRoutes);
 app.use('/api/velas', velasRoutes);
+app.use('/api/perfil', perfilRoutes);
 
 // 404
 app.use((req, res) => {

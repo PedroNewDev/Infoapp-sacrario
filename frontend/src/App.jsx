@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useUser } from './context/UserContext';
 import BottomTabBar from './components/layout/BottomTabBar';
+import CountdownBar from './components/layout/CountdownBar';
 import DevPanel from './components/dev/DevPanel';
 import Login from './pages/Login';
 import DefinirSenha from './pages/DefinirSenha';
@@ -13,6 +14,8 @@ import Comunidade from './pages/Comunidade';
 import BibliotecaEspiritual from './pages/BibliotecaEspiritual';
 import OracaoLimpeza from './pages/OracaoLimpeza';
 import Loja from './pages/Loja';
+import Perfil from './pages/Perfil';
+import ConsagracaoEterna from './pages/ConsagracaoEterna';
 import AcessoExpirado from './pages/AcessoExpirado';
 import Conclusao from './pages/Conclusao';
 
@@ -47,6 +50,7 @@ function ProtectedRoute({ children }) {
 function AppLayout({ children }) {
   return (
     <>
+      <CountdownBar />
       {children}
       <BottomTabBar />
       <DevPanel />
@@ -98,6 +102,12 @@ export default function App() {
       } />
       <Route path="/loja" element={
         <ProtectedRoute><AppLayout><Loja /></AppLayout></ProtectedRoute>
+      } />
+      <Route path="/perfil" element={
+        <ProtectedRoute><AppLayout><Perfil /></AppLayout></ProtectedRoute>
+      } />
+      <Route path="/consagracao-eterna" element={
+        <ProtectedRoute><AppLayout><ConsagracaoEterna /></AppLayout></ProtectedRoute>
       } />
 
       {/* Fallback */}

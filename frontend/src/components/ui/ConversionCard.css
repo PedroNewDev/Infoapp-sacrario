@@ -1,0 +1,53 @@
+.conversion-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(201, 147, 42, 0.08) 0%, rgba(184, 134, 11, 0.04) 100%);
+  border: 1px solid rgba(201, 147, 42, 0.15);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.conversion-card:active {
+  background: rgba(201, 147, 42, 0.12);
+  border-color: rgba(201, 147, 42, 0.3);
+}
+
+.conversion-card__glow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(201, 147, 42, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.conversion-card__texto {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.conversion-card__subtexto {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+
+.conversion-card__cta {
+  font-size: 12px;
+  color: var(--gold-primary);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  position: relative;
+}

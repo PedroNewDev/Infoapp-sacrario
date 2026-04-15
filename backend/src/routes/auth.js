@@ -60,6 +60,15 @@ router.post('/login', async (req, res) => {
       { expiresIn: process.env.JWT_EXPIRES_IN || '30d' }
     );
 
+    // Calcular dias restantes para o countdown
+    let diasRestantes = null;
+    const loginDate = usuario.data_primeiro_login || new Date();
+    if (!usuario.acesso_vitalicio && loginDate) {
+      const diffMs = new Date() - new Date(loginDate);
+      const diffDias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      diasRestantes = Math.max(0, 45 - diffDias);
+    }
+
     res.json({
       token,
       usuario: {
@@ -72,7 +81,8 @@ router.post('/login', async (req, res) => {
         onboarding_completo: !!usuario.onboarding_completo,
         intencao_principal: usuario.intencao_principal,
         horario_notificacao: usuario.horario_notificacao,
-        data_primeiro_login: usuario.data_primeiro_login
+        data_primeiro_login: usuario.data_primeiro_login,
+        diasRestantes
       }
     });
   } catch (err) {

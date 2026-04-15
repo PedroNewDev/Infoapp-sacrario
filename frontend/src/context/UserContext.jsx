@@ -20,6 +20,8 @@ export function UserProvider({ children }) {
     try {
       const { data } = await api.get('/auth/me');
       setUsuario(data.usuario);
+      // Registrar atividade diária silenciosamente
+      api.post('/perfil/atividade').catch(() => {});
     } catch {
       localStorage.removeItem('sacrario_token');
       localStorage.removeItem('sacrario_usuario');
@@ -32,6 +34,8 @@ export function UserProvider({ children }) {
     const { data } = await api.post('/auth/login', { email, senha });
     localStorage.setItem('sacrario_token', data.token);
     setUsuario(data.usuario);
+    // Registrar atividade diária
+    api.post('/perfil/atividade').catch(() => {});
     return data.usuario;
   }
 

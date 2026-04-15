@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../services/api';
+import { useUser } from '../context/UserContext';
 import { diasConteudo } from '../content/dias';
 import AudioPlayer from '../components/ui/AudioPlayer';
+import AudioLockedCard from '../components/ui/AudioLockedCard';
+import ConversionCard from '../components/ui/ConversionCard';
 import Button from '../components/ui/Button';
 import './DiaDaJornada.css';
 
@@ -10,6 +13,7 @@ export default function DiaDaJornada() {
   const { dia: diaParam } = useParams();
   const dia = parseInt(diaParam);
   const navigate = useNavigate();
+  const { usuario } = useUser();
   const [intencao, setIntencao] = useState('');
   const [concluido, setConcluido] = useState(false);
   const [concluindo, setConcluindo] = useState(false);
@@ -155,6 +159,20 @@ export default function DiaDaJornada() {
           <p className="dia-page__hint fade-in">
             Após ouvir a meditação, reze o Rosário completo e volte para registrar sua intenção.
           </p>
+        )}
+
+        {/* Card de áudio bloqueado */}
+        {!usuario?.modulo_audio && (
+          <div className="fade-in" style={{ marginTop: 'var(--space-md)' }}>
+            <AudioLockedCard dia={dia} titulo={conteudo.titulo} />
+          </div>
+        )}
+
+        {/* Conversion card pós-conclusão do dia */}
+        {concluido && !showCelebration && (
+          <div className="fade-in" style={{ marginTop: 'var(--space-md)' }}>
+            <ConversionCard variante="pos-oracao" />
+          </div>
         )}
       </div>
     </div>

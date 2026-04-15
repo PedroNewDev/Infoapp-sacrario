@@ -1,0 +1,72 @@
+.audio-locked-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  opacity: 0.85;
+}
+
+.audio-locked-card__header {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.audio-locked-card__lock {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.audio-locked-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.audio-locked-card__info strong {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.audio-locked-card__info span {
+  font-size: 11px;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.audio-locked-card__wave {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  height: 24px;
+  margin: var(--space-sm) 0;
+  opacity: 0.3;
+}
+
+.audio-locked-card__wave-bar {
+  width: 3px;
+  background: var(--gold-primary);
+  border-radius: 2px;
+  min-height: 3px;
+}
+
+.audio-locked-card__cta {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--gold-primary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: var(--space-xs) 0;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.audio-locked-card__cta:active {
+  opacity: 0.7;
+}

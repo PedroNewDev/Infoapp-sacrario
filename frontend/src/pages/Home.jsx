@@ -7,6 +7,7 @@ import ProgressBar from '../components/ui/ProgressBar';
 import SparkleButton from '../components/ui/SparkleButton';
 import PreviewPlayer from '../components/ui/PreviewPlayer';
 import PerfilPanel from '../components/ui/PerfilPanel';
+import ConversionCard from '../components/ui/ConversionCard';
 import { oracoesAudio } from '../content/biblioteca';
 import './Home.css';
 
@@ -19,9 +20,11 @@ export default function Home() {
   const [painelAberto, setPainelAberto] = useState(false);
   const [editandoIntencao, setEditandoIntencao] = useState(false);
   const [intencao, setIntencao] = useState(usuario?.intencao_principal || '');
+  const [stats, setStats] = useState(null);
 
   useEffect(() => {
     api.get('/jornada/progresso').then(r => setProgresso(r.data)).catch(() => {});
+    api.get('/perfil/stats').then(r => setStats(r.data)).catch(() => {});
   }, []);
 
   async function salvarIntencao() {
@@ -31,6 +34,7 @@ export default function Home() {
 
   const diaAtual = progresso?.diaAtual || 1;
   const percentual = progresso?.percentual || 0;
+  const jornadaCompleta = progresso?.jornadaCompleta || false;
 
   const cards = [
     { label: 'Rosário Virtual', icon: '📿', path: '/rosario' },
@@ -52,18 +56,70 @@ export default function Home() {
       />
 
       <div className="page-container">
+        {/* Streak + Velas */}
+        {stats?.streak > 0 && (
+          <div className="home__streak fade-in">
+            <span className="home__streak-icon">🕯️</span>
+            <span className="home__streak-text">
+              {stats.streak} {stats.streak === 1 ? 'dia' : 'dias'} de oração contínua
+            </span>
+          </div>
+        )}
+
         <div className="home__welcome fade-in">
           <h2 className="home__greeting">Bem-vinda, {usuario?.nome?.split(' ')[0]}</h2>
           <div className="ornament">✦</div>
-          <p className="home__subtitle">· Jornada de 21 Dias ·</p>
-          <p className="home__day">Dia {diaAtual} de 21</p>
 
-          <ProgressBar percentual={percentual} />
-
-          <SparkleButton onClick={() => navigate(`/jornada/${diaAtual}`)} fullWidth>
-            CONTINUAR DIA {diaAtual} »
-          </SparkleButton>
+          {jornadaCompleta ? (
+            <>
+              <p className="home__subtitle">· Jornada Concluída ·</p>
+              <p className="home__day">21 de 21 dias — Consagração completa</p>
+              <ProgressBar percentual={100} />
+              <div className="home__pos-jornada">
+                <span className="home__pos-jornada-icon">👑</span>
+                <p className="home__pos-jornada-texto">
+                  Sua consagração foi concluída, mas a graça não precisa ter fim.
+                </p>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="home__subtitle">· Jornada de 21 Dias ·</p>
+              <p className="home__day">Dia {diaAtual} de 21</p>
+              <ProgressBar percentual={percentual} />
+              <SparkleButton onClick={() => navigate(`/jornada/${diaAtual}`)} fullWidth>
+                CONTINUAR DIA {diaAtual} »
+              </SparkleButton>
+            </>
+          )}
         </div>
+
+        {/* Velas visuais — últimos 7 dias */}
+        {stats?.velasRecentes && stats.velasRecentes.length > 0 && (
+          <div className="home__velas fade-in">
+            <span className="home__velas-label">Sua presença no sacrário</span>
+            <div className="home__velas-row">
+              {Array.from({ length: 7 }).map((_, i) => {
+                const dataAlvo = new Date();
+                dataAlvo.setDate(dataAlvo.getDate() - (6 - i));
+                const dataStr = dataAlvo.toISOString().split('T')[0];
+                const acesa = stats.velasRecentes.some(v => {
+                  const vStr = new Date(v).toISOString().split('T')[0];
+                  return vStr === dataStr;
+                });
+                const diasSemana = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+                return (
+                  <div key={i} className="home__vela-col">
+                    <div className={`home__vela ${acesa ? 'home__vela--acesa' : ''}`}>
+                      {acesa ? '🕯️' : '·'}
+                    </div>
+                    <span className="home__vela-dia">{diasSemana[dataAlvo.getDay()]}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <div className="home__grid fade-in">
           {cards.map(card => (
@@ -132,6 +188,13 @@ export default function Home() {
           </div>
         </button>
 
+        {/* Conversion card pós-jornada */}
+        {jornadaCompleta && (
+          <div className="fade-in" style={{ marginTop: 'var(--space-md)' }}>
+            <ConversionCard variante="pos-jornada" />
+          </div>
+        )}
+
         {/* Intenção flutuante */}
         <div className="home__intencao fade-in">
           {editandoIntencao ? (
@@ -154,12 +217,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* Banner de dias restantes */}
-        {!usuario?.acesso_vitalicio && usuario?.diasRestantes != null && usuario.diasRestantes <= 14 && (
-          <div className="home__expiracao fade-in">
-            Faltam {usuario.diasRestantes} dias para seu acesso expirar
-          </div>
-        )}
       </div>
     </div>
   );

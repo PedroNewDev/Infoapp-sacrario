@@ -289,3 +289,100 @@
   font-size: 13px;
   color: #8B4513;
 }
+
+/* Streak */
+.home__streak {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px var(--space-md);
+  margin-bottom: var(--space-sm);
+  background: rgba(201, 147, 42, 0.06);
+  border-radius: var(--radius-md);
+}
+
+.home__streak-icon {
+  font-size: 14px;
+}
+
+.home__streak-text {
+  font-size: 12px;
+  color: var(--gold-dark);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Velas (últimos 7 dias) */
+.home__velas {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.home__velas-label {
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.home__velas-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.home__vela-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.home__vela {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border-radius: 50%;
+  background: rgba(201, 147, 42, 0.04);
+  color: var(--text-light);
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+
+.home__vela--acesa {
+  opacity: 1;
+  background: rgba(201, 147, 42, 0.1);
+}
+
+.home__vela-dia {
+  font-size: 9px;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+/* Pós-jornada */
+.home__pos-jornada {
+  text-align: center;
+  padding: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.home__pos-jornada-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.home__pos-jornada-texto {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}

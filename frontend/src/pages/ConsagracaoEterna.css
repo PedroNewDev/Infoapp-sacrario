@@ -1,0 +1,200 @@
+.consagracao-page__content {
+  text-align: center;
+  padding-bottom: var(--space-xl);
+}
+
+.consagracao-page__icon-main {
+  font-size: 36px;
+  color: var(--gold-primary);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.consagracao-page__title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.consagracao-page__title em {
+  color: var(--gold-primary);
+  font-style: italic;
+}
+
+.consagracao-page__subtitle {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: var(--space-lg);
+}
+
+/* Alerta de dias */
+.consagracao-page__alerta {
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 147, 42, 0.25);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  text-align: left;
+}
+
+.consagracao-page__alerta-header {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.consagracao-page__alerta-header > span {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.consagracao-page__alerta-header strong {
+  font-size: 14px;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.consagracao-page__alerta-header em {
+  color: var(--gold-primary);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.consagracao-page__alerta-header p {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.consagracao-page__alerta-bar-wrap {
+  width: 100%;
+  height: 4px;
+  background: rgba(201, 147, 42, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.consagracao-page__alerta-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* Benefícios */
+.consagracao-page__beneficio {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: 10px;
+}
+
+.consagracao-page__beneficio-icon {
+  font-size: 18px;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.consagracao-page__beneficio strong {
+  font-size: 14px;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.consagracao-page__beneficio p {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* Oferta */
+.consagracao-page__oferta {
+  background: linear-gradient(135deg, rgba(201, 147, 42, 0.08) 0%, rgba(184, 134, 11, 0.04) 100%);
+  border: 1px solid rgba(201, 147, 42, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.consagracao-page__risco {
+  text-decoration: line-through;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+.consagracao-page__oferta-por {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.consagracao-page__oferta-preco {
+  margin: var(--space-xs) 0;
+}
+
+.consagracao-page__cifrao {
+  font-size: 20px;
+  color: var(--text-primary);
+  vertical-align: super;
+  font-weight: 600;
+}
+
+.consagracao-page__valor {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.consagracao-page__oferta-info {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: var(--space-md);
+}
+
+.consagracao-page__oferta-seguro {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: var(--space-sm);
+}
+
+/* Vitalício card */
+.consagracao-page__vitalicio-card {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  background: linear-gradient(135deg, rgba(201, 147, 42, 0.12), rgba(184, 134, 11, 0.06));
+  border: 1px solid rgba(201, 147, 42, 0.25);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-top: var(--space-lg);
+  text-align: left;
+}
+
+.consagracao-page__vitalicio-card > span {
+  font-size: 28px;
+}
+
+.consagracao-page__vitalicio-card strong {
+  display: block;
+  color: var(--gold-dark);
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.consagracao-page__vitalicio-card p {
+  font-size: 12px;
+  color: var(--text-light);
+}

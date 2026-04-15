@@ -84,3 +84,76 @@
   font-size: 10px;
   color: var(--text-secondary);
 }
+
+/* Mistérios Extras (bloqueados) */
+.jornada-page__extras {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.jornada-page__extras-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--gold-primary);
+  margin-bottom: 4px;
+}
+
+.jornada-page__extras-sub {
+  font-size: 13px;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: var(--space-md);
+}
+
+.jornada-page__extra-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+.jornada-page__extra-lock {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.jornada-page__extra-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.jornada-page__extra-info strong {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.jornada-page__extra-info span {
+  font-size: 11px;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.jornada-page__extra-cta {
+  background: none;
+  border: 1px solid rgba(201, 147, 42, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--gold-primary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.jornada-page__extra-cta:active {
+  background: rgba(201, 147, 42, 0.08);
+}
