@@ -107,13 +107,15 @@ export default function Home() {
                   const vStr = new Date(v).toISOString().split('T')[0];
                   return vStr === dataStr;
                 });
-                const diasSemana = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+                const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+                const eHoje = i === 6;
                 return (
-                  <div key={i} className="home__vela-col">
+                  <div key={i} className={`home__vela-col ${eHoje ? 'home__vela-col--hoje' : ''}`}>
                     <div className={`home__vela ${acesa ? 'home__vela--acesa' : ''}`}>
                       {acesa ? '🕯️' : '·'}
                     </div>
                     <span className="home__vela-dia">{diasSemana[dataAlvo.getDay()]}</span>
+                    <span className="home__vela-num">{dataAlvo.getDate()}</span>
                   </div>
                 );
               })}

@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const pool = require('../db/connection');
 const autenticar = require('../middleware/autenticar');
+const { enviarResetSenha } = require('../services/email');
 
 const router = express.Router();
 
@@ -168,8 +169,13 @@ router.post('/esqueci-senha', async (req, res) => {
         [token, expiracao, rows[0].id]
       );
 
-      // TODO: Integrar envio de e-mail com link de reset
-      console.log(`[RESET SENHA] Token gerado para ${email}: ${token}`);
+      // Buscar nome para personalizar o e-mail
+      const [userData] = await pool.execute('SELECT nome FROM usuarios WHERE id = ?', [rows[0].id]);
+      const nome = userData[0]?.nome || 'Devota';
+
+      enviarResetSenha(email, nome, token)
+        .then(() => console.log(`[RESET SENHA] E-mail de reset enviado para: ${email}`))
+        .catch(err => console.error(`[RESET SENHA] Falha ao enviar e-mail para ${email}:`, err.message));
     }
 
     res.json({ mensagem: 'Se o e-mail estiver cadastrado, você receberá um link para redefinir sua senha.' });

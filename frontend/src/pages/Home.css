@@ -331,7 +331,7 @@
 .home__velas-row {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 6px;
 }
 
 .home__vela-col {
@@ -339,15 +339,26 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
+  min-width: 36px;
+}
+
+.home__vela-col--hoje .home__vela-dia {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.home__vela-col--hoje .home__vela-num {
+  color: var(--gold);
+  font-weight: 600;
 }
 
 .home__vela {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 17px;
   border-radius: 50%;
   background: rgba(201, 147, 42, 0.04);
   color: var(--text-light);
@@ -357,13 +368,20 @@
 
 .home__vela--acesa {
   opacity: 1;
-  background: rgba(201, 147, 42, 0.1);
+  background: rgba(201, 147, 42, 0.12);
 }
 
 .home__vela-dia {
   font-size: 9px;
   color: var(--text-light);
   text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.home__vela-num {
+  font-size: 9px;
+  color: var(--text-lighter, var(--text-light));
+  opacity: 0.7;
 }
 
 /* Pós-jornada */

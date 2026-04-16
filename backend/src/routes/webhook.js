@@ -1,6 +1,7 @@
 const express = require('express');
 const crypto = require('crypto');
 const pool = require('../db/connection');
+const { enviarPrimeiroAcesso } = require('../services/email');
 
 const router = express.Router();
 
@@ -85,9 +86,11 @@ router.post('/payt', async (req, res) => {
             ]
           );
 
-          // TODO: Enviar e-mail com link de primeiro acesso
-          const linkPrimeiroAcesso = `${process.env.FRONTEND_URL}/definir-senha?token=${token}`;
-          console.log(`[WEBHOOK] Conta criada para ${email}. Link: ${linkPrimeiroAcesso}`);
+          // Enviar e-mail com link de primeiro acesso
+          const nome = dados.nome || 'Devota';
+          enviarPrimeiroAcesso(email, nome, token)
+            .then(() => console.log(`[WEBHOOK] E-mail de primeiro acesso enviado para: ${email}`))
+            .catch(err => console.error(`[WEBHOOK] Falha ao enviar e-mail para ${email}:`, err.message));
         }
         break;
       }
