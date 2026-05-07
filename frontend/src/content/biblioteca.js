@@ -91,17 +91,18 @@ export const reflexoesSantos = [
 
 // Lista de orações em áudio (módulo pago - Order Bump 2)
 // previewUrl: quando presente, o app libera prévia gratuita tocável (usado para venda)
+// url: caminho do arquivo completo no servidor (requer modulo_audio=1)
 export const oracoesAudio = [
-  { id: 'salve-rainha-audio', titulo: 'Salve Rainha', duracao: '4:30', descricao: 'Rezada com fundo musical sacro de cordas', previewUrl: '/audio/previews/salve-rainha-preview.mp3' },
-  { id: 'ladainha-audio', titulo: 'Ladainha de Nossa Senhora', duracao: '9:15', descricao: 'Ladainha completa com respostas cantadas' },
-  { id: 'consagracao-audio', titulo: 'Consagração a Nossa Senhora', duracao: '6:20', descricao: 'Consagração de São Luís de Montfort' },
-  { id: 'sao-bernardo-audio', titulo: 'Oração de São Bernardo', duracao: '3:45', descricao: 'Olha para a Estrela, invoca Maria' },
-  { id: 'angelus-audio', titulo: 'Angelus', duracao: '3:30', descricao: 'O Anjo do Senhor anunciou a Maria' },
-  { id: 'magnificat-audio', titulo: 'Magnificat', duracao: '4:50', descricao: 'Cântico de Maria com fundo de harpa' },
-  { id: 'protecao-audio', titulo: 'Oração pela Proteção da Família', duracao: '5:40', descricao: 'Para rezar pela sua família' },
-  { id: 'cura-audio', titulo: 'Oração pela Cura', duracao: '5:15', descricao: 'Para momentos de doença e dor' },
-  { id: 'aflicao-audio', titulo: 'Oração para Momentos de Aflição', duracao: '4:30', descricao: 'Quando o peso é grande demais' },
-  { id: 'perdao-audio', titulo: 'Oração do Perdão', duracao: '4:15', descricao: 'Para soltar e ser livre' },
-  { id: 'agradecimento-audio', titulo: 'Oração de Agradecimento', duracao: '3:40', descricao: 'Para dias de gratidão' },
-  { id: 'paz-audio', titulo: 'Oração pela Paz', duracao: '4:00', descricao: 'Para a paz no coração e no mundo' }
+  { id: 'salve-rainha-audio', titulo: 'Salve Rainha', duracao: '4:30', descricao: 'Rezada com fundo musical sacro de cordas', url: '/media/audio/oracoes/oracao_salve-rainha.mp3', previewUrl: '/audio/previews/salve-rainha-preview.mp3' },
+  { id: 'ladainha-audio', titulo: 'Ladainha de Nossa Senhora', duracao: '9:15', descricao: 'Ladainha completa com respostas cantadas', url: '/media/audio/oracoes/oracao_ladainha.mp3' },
+  { id: 'consagracao-audio', titulo: 'Consagração a Nossa Senhora', duracao: '6:20', descricao: 'Consagração de São Luís de Montfort', url: '/media/audio/oracoes/oracao_consagracao.mp3' },
+  { id: 'sao-bernardo-audio', titulo: 'Oração de São Bernardo', duracao: '3:45', descricao: 'Olha para a Estrela, invoca Maria', url: '/media/audio/oracoes/oracao_sao-bernardo.mp3' },
+  { id: 'angelus-audio', titulo: 'Angelus', duracao: '3:30', descricao: 'O Anjo do Senhor anunciou a Maria', url: '/media/audio/oracoes/oracao_angelus.mp3' },
+  { id: 'magnificat-audio', titulo: 'Magnificat', duracao: '4:50', descricao: 'Cântico de Maria com fundo de harpa', url: '/media/audio/oracoes/oracao_magnificat.mp3' },
+  { id: 'protecao-audio', titulo: 'Oração pela Proteção da Família', duracao: '5:40', descricao: 'Para rezar pela sua família', url: '/media/audio/oracoes/oracao_protecao.mp3' },
+  { id: 'cura-audio', titulo: 'Oração pela Cura', duracao: '5:15', descricao: 'Para momentos de doença e dor', url: '/media/audio/oracoes/oracao_cura.mp3' },
+  { id: 'aflicao-audio', titulo: 'Oração para Momentos de Aflição', duracao: '4:30', descricao: 'Quando o peso é grande demais', url: '/media/audio/oracoes/oracao_aflicao.mp3' },
+  { id: 'perdao-audio', titulo: 'Oração do Perdão', duracao: '4:15', descricao: 'Para soltar e ser livre', url: '/media/audio/oracoes/oracao_perdao.mp3' },
+  { id: 'agradecimento-audio', titulo: 'Oração de Agradecimento', duracao: '3:40', descricao: 'Para dias de gratidão', url: '/media/audio/oracoes/oracao_agradecimento.mp3' },
+  { id: 'paz-audio', titulo: 'Oração pela Paz', duracao: '4:00', descricao: 'Para a paz no coração e no mundo', url: '/media/audio/oracoes/oracao_paz.mp3' }
 ];
