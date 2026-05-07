@@ -6,6 +6,9 @@ backend/node_modules/
 # Build
 frontend/dist/
 
+# Midia pesada local
+backend/media/audio/**/*.mp3
+
 # Variáveis de ambiente (NUNCA subir para o git)
 .env
 .env.local
