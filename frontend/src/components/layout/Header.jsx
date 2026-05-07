@@ -11,7 +11,9 @@ export default function Header({ showAvatar, onAvatarClick }) {
         </button>
       )}
       <div className="header__logo">
-        <span className="header__icon">✦</span>
+        <div className="header__ostensorio-wrap">
+          <img src="/img/ostensorio.png" alt="" className="header__ostensorio" />
+        </div>
         <h1 className="header__title">Sacrário do Rosário</h1>
       </div>
     </header>

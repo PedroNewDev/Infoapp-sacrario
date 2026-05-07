@@ -11,10 +11,11 @@
 }
 
 .consagracao-page__title {
-  font-family: var(--font-heading);
-  font-size: 26px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .consagracao-page__title em {
@@ -24,18 +25,22 @@
 
 .consagracao-page__subtitle {
   font-size: 14px;
-  color: var(--text-light);
+  color: var(--text-secondary);
   margin-bottom: var(--space-lg);
+  font-style: italic;
 }
 
 /* Alerta de dias */
 .consagracao-page__alerta {
-  background: var(--bg-card);
-  border: 1px solid rgba(201, 147, 42, 0.25);
+  background: rgba(250, 246, 238, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 147, 42, 0.28);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   margin-bottom: var(--space-lg);
   text-align: left;
+  box-shadow: inset 0 2px 6px rgba(255,255,255,0.6), 0 3px 12px rgba(185,134,11,0.12);
 }
 
 .consagracao-page__alerta-header {
@@ -46,13 +51,14 @@
 }
 
 .consagracao-page__alerta-header > span {
-  font-size: 20px;
+  font-size: 22px;
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .consagracao-page__alerta-header strong {
-  font-size: 14px;
+  font-family: var(--font-display);
+  font-size: 15px;
   color: var(--text-primary);
   display: block;
   margin-bottom: 4px;
@@ -65,23 +71,23 @@
 }
 
 .consagracao-page__alerta-header p {
-  font-size: 12px;
-  color: var(--text-light);
-  line-height: 1.4;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 .consagracao-page__alerta-bar-wrap {
   width: 100%;
-  height: 4px;
-  background: rgba(201, 147, 42, 0.1);
-  border-radius: 2px;
+  height: 5px;
+  background: rgba(201, 147, 42, 0.12);
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .consagracao-page__alerta-bar {
   height: 100%;
-  background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
-  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+  border-radius: 3px;
   transition: width 1s ease;
 }
 
@@ -91,40 +97,49 @@
   gap: var(--space-sm);
   align-items: flex-start;
   text-align: left;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: rgba(250, 246, 238, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(201, 147, 42, 0.18);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   margin-bottom: 10px;
+  box-shadow: inset 0 2px 5px rgba(255,255,255,0.55), 0 2px 8px rgba(185,134,11,0.08);
 }
 
 .consagracao-page__beneficio-icon {
   font-size: 18px;
   color: var(--gold-primary);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .consagracao-page__beneficio strong {
-  font-size: 14px;
+  font-family: var(--font-display);
+  font-size: 15px;
   color: var(--text-primary);
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .consagracao-page__beneficio p {
-  font-size: 12px;
-  color: var(--text-light);
-  line-height: 1.4;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 /* Oferta */
 .consagracao-page__oferta {
-  background: linear-gradient(135deg, rgba(201, 147, 42, 0.08) 0%, rgba(184, 134, 11, 0.04) 100%);
-  border: 1px solid rgba(201, 147, 42, 0.2);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg) var(--space-md);
+  background: rgba(250, 246, 238, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(201, 147, 42, 0.28);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl) var(--space-md);
   margin-top: var(--space-lg);
+  box-shadow:
+    inset 0 2px 8px rgba(255,255,255,0.65),
+    0 6px 24px rgba(185,134,11,0.16);
 }
 
 .consagracao-page__risco {
@@ -151,10 +166,10 @@
 }
 
 .consagracao-page__valor {
-  font-size: 56px;
+  font-size: 60px;
   font-weight: 700;
   color: var(--gold-dark);
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   line-height: 1;
 }
 
@@ -162,6 +177,7 @@
   font-size: 12px;
   color: var(--text-light);
   margin-bottom: var(--space-md);
+  font-style: italic;
 }
 
 .consagracao-page__oferta-seguro {
@@ -170,31 +186,35 @@
   margin-top: var(--space-sm);
 }
 
-/* Vitalício card */
+/* Vitalício */
 .consagracao-page__vitalicio-card {
   display: flex;
   gap: var(--space-md);
   align-items: center;
-  background: linear-gradient(135deg, rgba(201, 147, 42, 0.12), rgba(184, 134, 11, 0.06));
-  border: 1px solid rgba(201, 147, 42, 0.25);
+  background: rgba(250, 246, 238, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 147, 42, 0.28);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   margin-top: var(--space-lg);
   text-align: left;
+  box-shadow: inset 0 2px 6px rgba(255,255,255,0.6), 0 3px 12px rgba(185,134,11,0.12);
 }
 
 .consagracao-page__vitalicio-card > span {
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .consagracao-page__vitalicio-card strong {
+  font-family: var(--font-display);
   display: block;
   color: var(--gold-dark);
-  font-size: 15px;
-  margin-bottom: 2px;
+  font-size: 16px;
+  margin-bottom: 3px;
 }
 
 .consagracao-page__vitalicio-card p {
-  font-size: 12px;
-  color: var(--text-light);
+  font-size: 13px;
+  color: var(--text-secondary);
 }

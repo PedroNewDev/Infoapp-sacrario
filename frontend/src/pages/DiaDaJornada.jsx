@@ -94,11 +94,9 @@ export default function DiaDaJornada() {
         <h2 className="dia-page__titulo fade-in">{conteudo.titulo}</h2>
         <p className="dia-page__misterio fade-in">Mistério em Destaque: {conteudo.misterio_destaque}</p>
 
-        {/* Imagem devocional (placeholder) */}
+        {/* Imagem devocional */}
         <div className="dia-page__imagem fade-in">
-          <div className="dia-page__imagem-placeholder">
-            <span>🌹</span>
-          </div>
+          <img src="/img/maria.jpg" alt="Nossa Senhora de Fátima" className="dia-page__imagem-foto" />
         </div>
 
         {/* Player de áudio */}

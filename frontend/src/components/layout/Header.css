@@ -1,9 +1,10 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: var(--space-md);
-  padding-top: var(--space-lg);
+  padding-top: var(--space-xl);
+  position: relative;
 }
 
 .header__logo {
@@ -13,33 +14,113 @@
   flex: 1;
 }
 
-.header__icon {
-  font-size: 28px;
-  color: var(--gold-primary);
-  margin-bottom: 4px;
+.header__ostensorio-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  margin-bottom: 6px;
+}
+
+/* Luz sagrada — glow radial + raios */
+.header__ostensorio-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -44px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 248, 190, 0.72) 0%,
+      rgba(255, 220, 80,  0.48) 22%,
+      rgba(212, 168, 67,  0.18) 48%,
+      transparent 68%
+    ),
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,   rgba(255, 225, 80, 0.28) 4deg,  transparent 8deg,
+      transparent 30deg,  rgba(255, 225, 80, 0.28) 34deg, transparent 38deg,
+      transparent 60deg,  rgba(255, 225, 80, 0.28) 64deg, transparent 68deg,
+      transparent 90deg,  rgba(255, 225, 80, 0.28) 94deg, transparent 98deg,
+      transparent 120deg, rgba(255, 225, 80, 0.28) 124deg, transparent 128deg,
+      transparent 150deg, rgba(255, 225, 80, 0.28) 154deg, transparent 158deg,
+      transparent 180deg, rgba(255, 225, 80, 0.28) 184deg, transparent 188deg,
+      transparent 210deg, rgba(255, 225, 80, 0.28) 214deg, transparent 218deg,
+      transparent 240deg, rgba(255, 225, 80, 0.28) 244deg, transparent 248deg,
+      transparent 270deg, rgba(255, 225, 80, 0.28) 274deg, transparent 278deg,
+      transparent 300deg, rgba(255, 225, 80, 0.28) 304deg, transparent 308deg,
+      transparent 330deg, rgba(255, 225, 80, 0.28) 334deg, transparent 338deg
+    );
+  animation: sacredGlow 3.5s ease-in-out infinite, sacredRotate 90s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Halo externo suave */
+.header__ostensorio-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 248, 190, 0.30) 0%,
+    rgba(212, 168, 67,  0.12) 50%,
+    transparent 72%
+  );
+  animation: sacredGlow 3.5s ease-in-out infinite reverse;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes sacredGlow {
+  0%, 100% { opacity: 0.7;  transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.07); }
+}
+
+@keyframes sacredRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.header__ostensorio {
+  position: relative;
+  z-index: 1;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 2px 10px rgba(185, 134, 11, 0.40));
 }
 
 .header__title {
   font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 600;
-  color: var(--gold-primary);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-dark);
   text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(185, 134, 11, 0.2);
 }
 
 .header__avatar {
   position: absolute;
-  left: var(--space-md);
-  top: var(--space-lg);
+  right: var(--space-md);
+  top: var(--space-xl);
   width: 44px;
   height: 44px;
   border-radius: var(--radius-full);
-  background: var(--bg-card);
-  border: 2px solid var(--gold-light);
+  background: rgba(250, 246, 238, 0.85);
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(201, 147, 42, 0.35);
   color: var(--gold-primary);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 8px rgba(185, 134, 11, 0.2);
   -webkit-tap-highlight-color: transparent;
 }
 .header__avatar:active {

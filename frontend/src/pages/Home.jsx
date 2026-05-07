@@ -8,6 +8,7 @@ import SparkleButton from '../components/ui/SparkleButton';
 import PreviewPlayer from '../components/ui/PreviewPlayer';
 import PerfilPanel from '../components/ui/PerfilPanel';
 import ConversionCard from '../components/ui/ConversionCard';
+import IconSacro from '../components/ui/IconSacro';
 import { oracoesAudio } from '../content/biblioteca';
 import './Home.css';
 
@@ -197,26 +198,30 @@ export default function Home() {
           </div>
         )}
 
-        {/* Intenção flutuante */}
-        <div className="home__intencao fade-in">
-          {editandoIntencao ? (
-            <div className="home__intencao-edit">
-              <input
-                type="text"
-                value={intencao}
-                onChange={e => setIntencao(e.target.value)}
-                maxLength={250}
-                autoFocus
-              />
-              <button onClick={salvarIntencao}>✓</button>
-            </div>
-          ) : (
-            <div className="home__intencao-display" onClick={() => setEditandoIntencao(true)}>
-              <span>🌹</span>
-              <span>Minha Intenção: {usuario?.intencao_principal || 'Toque para definir'}</span>
-              <span className="home__intencao-edit-icon">✎</span>
-            </div>
-          )}
+        {/* Cena devocional — Santa + Basílica + Intenção */}
+        <div className="home__cena fade-in">
+          <div className="home__cena-bg" />
+          <img src="/img/santa.png" alt="Nossa Senhora" className="home__cena-santa" />
+          <div className="home__cena-direita">
+            {editandoIntencao ? (
+              <div className="home__intencao-edit">
+                <input
+                  type="text"
+                  value={intencao}
+                  onChange={e => setIntencao(e.target.value)}
+                  maxLength={250}
+                  autoFocus
+                />
+                <button onClick={salvarIntencao}>✓</button>
+              </div>
+            ) : (
+              <div className="home__intencao-display" onClick={() => setEditandoIntencao(true)}>
+                <span className="home__intencao-label">Minha Intenção</span>
+                <span className="home__intencao-texto">{usuario?.intencao_principal || 'Toque para definir'}</span>
+                <span className="home__intencao-edit-icon">✎</span>
+              </div>
+            )}
+          </div>
         </div>
 
       </div>

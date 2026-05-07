@@ -38,6 +38,7 @@
 
   /* Fontes */
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif; /* alias */
   --font-body: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
 
   /* Espaçamentos */
@@ -67,6 +68,12 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
+  background-image:
+    linear-gradient(rgba(245, 237, 214, 0.72), rgba(245, 237, 214, 0.72)),
+    url('/img/basilica.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
@@ -81,6 +88,10 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  /* Mobile-first: limitar largura e centralizar em telas grandes */
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
 }
 
 a {
