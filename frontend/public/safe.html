@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacrário do Rosário — Sua Jornada de 21 Dias com Nossa Senhora</title>
+  <meta name="description" content="Método completo para rezar o Rosário com fé, constância e profundidade. 21 dias de jornada guiada pelos 20 Mistérios, rosário virtual interativo e biblioteca espiritual.">
+  <meta property="og:title" content="Sacrário do Rosário — Sua Jornada de 21 Dias com Nossa Senhora">
+  <meta property="og:description" content="Método completo para rezar o Rosário com fé e constância. 21 dias de jornada guiada pelos Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================
+       DESIGN SYSTEM — Sacrário do Rosário
+       ========================================== */
+    :root {
+      --bg-primary:    #FBF3DE;
+      --bg-secondary:  #F2E4C0;
+      --bg-card:       #FFFBEF;
+      --bg-dark:       #2A1A08;
+
+      --gold-primary:  #C9932A;
+      --gold-dark:     #9C6E1D;
+      --gold-deep:     #7A5314;
+      --gold-light:    #E8C97A;
+      --gold-pale:     #F2DEA6;
+      --gold-grad:     linear-gradient(135deg, #8B5E15 0%, #B8860B 30%, #D4A843 60%, #E8C97A 100%);
+      --gold-grad-btn: linear-gradient(135deg, #B8860B 0%, #D4A843 50%, #E8C97A 100%);
+
+      --text-primary:   #3D2B1A;
+      --text-secondary: #5A3D1F;
+      --text-light:     #7A5C3A;
+      --text-lighter:   #9A7A53;
+      --text-on-gold:   #FFFBEF;
+
+      --shadow-card:     0 4px 16px rgba(185,134,11,.14);
+      --shadow-elevated: 0 8px 28px rgba(185,134,11,.20);
+      --shadow-gold:     0 4px 18px rgba(201,147,42,.45);
+      --shadow-divine:   0 8px 32px rgba(232,201,122,.35);
+
+      --border-light: 1px solid rgba(201,147,42,.18);
+      --border-gold:  1px solid rgba(201,147,42,.40);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 28px;
+
+      --font-script:  'Great Vibes', cursive;
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Libre Baskerville', Georgia, serif;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { font-size:16px; scroll-behavior:smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width:100%; display:block; }
+    a { color: var(--gold-primary); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    button { font-family: var(--font-body); cursor:pointer; border:none; }
+
+    /* ---- LAYOUT ---- */
+    .container {
+      width:100%;
+      max-width:720px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+    section { padding:56px 0; }
+
+    /* ---- TYPOGRAPHY ---- */
+    .eyebrow {
+      display:block;
+      font-family: var(--font-body);
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: var(--gold-dark);
+      margin-bottom:10px;
+    }
+    h1, h2, h3 { font-family: var(--font-heading); line-height:1.2; }
+    h1 { font-size:clamp(2rem,6vw,2.9rem); font-weight:600; color: var(--text-primary); }
+    h2 { font-size:clamp(1.6rem,5vw,2.3rem); font-weight:600; color: var(--text-primary); }
+    h3 { font-size:1.25rem; font-weight:600; }
+    em { font-style:italic; color: var(--gold-dark); }
+    p { color: var(--text-secondary); }
+
+    /* ---- ORNAMENT ---- */
+    .ornament {
+      display:flex; align-items:center; justify-content:center;
+      gap:12px; color: var(--gold-primary); font-size:.85rem;
+      margin:12px 0;
+    }
+    .ornament::before, .ornament::after {
+      content:'';
+      flex:1;
+      height:1px;
+      background:linear-gradient(to right,transparent,rgba(201,147,42,.45),transparent);
+      max-width:80px;
+    }
+
+    /* ---- CTA BUTTON ---- */
+    .btn-cta {
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      background: var(--gold-grad-btn);
+      color: var(--bg-dark);
+      font-family: var(--font-body);
+      font-size:1rem;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      padding:18px 36px;
+      border-radius:var(--radius-xl);
+      border:none;
+      box-shadow: var(--shadow-gold);
+      cursor:pointer;
+      text-decoration:none;
+      transition:filter .2s, transform .15s, box-shadow .2s;
+      line-height:1.2;
+    }
+    .btn-cta:hover {
+      filter:brightness(1.08);
+      transform:translateY(-2px);
+      box-shadow: 0 6px 28px rgba(201,147,42,.6);
+      text-decoration:none;
+    }
+    .btn-cta:active { transform:translateY(0); }
+    .btn-cta.full { width:100%; }
+    .btn-cta .arrow { font-size:1.1em; }
+
+    /* ---- TOP BAR ---- */
+    .topbar {
+      background: var(--bg-dark);
+      color: var(--gold-light);
+      font-size:.72rem;
+      font-family: var(--font-body);
+      text-align:center;
+      padding:9px 16px;
+      letter-spacing:.06em;
+    }
+    .topbar span { color: var(--gold-pale); font-weight:700; }
+    .topbar .sep { opacity:.4; margin:0 8px; }
+
+    /* ---- AD NOTICE ---- */
+    .ad-notice {
+      background: var(--bg-secondary);
+      border-bottom: var(--border-light);
+      text-align:center;
+      padding:7px 20px;
+      font-size:.68rem;
+      color: var(--text-light);
+      letter-spacing:.02em;
+    }
+    .ad-notice a { color: var(--gold-dark); font-weight:700; }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: radial-gradient(ellipse at 50% 0%, #FFF7DC 0%, #FBF0CC 50%, #F5E4B2 100%);
+      padding:56px 0 48px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before {
+      content:'';
+      position:absolute;
+      top:0; left:0; right:0;
+      height:3px;
+      background: var(--gold-grad);
+    }
+    .hero .container { display:grid; grid-template-columns:1fr; gap:40px; align-items:center; }
+    @media(min-width:600px){
+      .hero .container { grid-template-columns:1fr auto; gap:48px; }
+    }
+    .hero__text {}
+    .hero__eyebrow {
+      font-family: var(--font-script);
+      font-size:1.6rem;
+      color: var(--gold-primary);
+      display:block;
+      margin-bottom:6px;
+    }
+    .hero h1 { margin-bottom:18px; }
+    .hero__desc { font-size:.95rem; margin-bottom:28px; max-width:480px; }
+    .hero__badges {
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:24px;
+    }
+    .hero__badge {
+      background: var(--bg-card);
+      border: var(--border-gold);
+      border-radius:var(--radius-xl);
+      padding:8px 16px;
+      font-size:.72rem;
+      font-weight:700;
+      color: var(--gold-dark);
+      letter-spacing:.04em;
+      display:flex; align-items:center; gap:6px;
+    }
+
+    /* hero mockup — SVG only */
+    .hero__mockup {
+      width:200px;
+      flex-shrink:0;
+      margin:0 auto;
+    }
+    @media(min-width:600px){ .hero__mockup { width:220px; } }
+
+    /* ---- STATS ---- */
+    .stats { background: var(--bg-dark); padding:40px 0; }
+    .stats__grid {
+      display:grid;
+      grid-template-columns: repeat(2,1fr);
+      gap:1px;
+      background:rgba(232,201,122,.15);
+    }
+    @media(min-width:500px){ .stats__grid { grid-template-columns: repeat(4,1fr); } }
+    .stats__item {
+      background: var(--bg-dark);
+      padding:28px 16px;
+      text-align:center;
+    }
+    .stats__num {
+      font-family: var(--font-heading);
+      font-size:2rem;
+      font-weight:700;
+      color: var(--gold-light);
+      display:block;
+      line-height:1;
+      margin-bottom:6px;
+    }
+    .stats__label {
+      font-size:.7rem;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color: var(--text-lighter);
+    }
+
+    /* ---- SECTION HEADERS ---- */
+    .section-header { text-align:center; margin-bottom:40px; }
+    .section-header p { max-width:520px; margin:12px auto 0; font-size:.92rem; }
+
+    /* ---- PROBLEM CARDS ---- */
+    .problem { background: var(--bg-secondary); }
+    .cards-grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    @media(min-width:480px){ .cards-grid { grid-template-columns:1fr 1fr; } }
+    .problem-card {
+      background: var(--bg-card);
+      border: var(--border-light);
+      border-radius:var(--radius-lg);
+      padding:24px 20px;
+      box-shadow: var(--shadow-card);
+    }
+    .problem-card__icon { font-size:1.8rem; margin-bottom:12px; }
+    .problem-card h3 { font-size:1.05rem; margin-bottom:8px; color: var(--text-primary); }
+    .problem-card p { font-size:.85rem; }
+
+    /* ---- SOLUTION ---- */
+    .solution { background: var(--bg-primary); }
+    .solution__inner {
+      text-align:center;
+      max-width:580px;
+      margin:0 auto;
+    }
+    .solution__inner h2 { margin-bottom:16px; }
+    .solution__inner p { font-size:.92rem; margin-bottom:28px; }
+    .solution__quote {
+      margin-top:32px;
+      padding:20px 24px;
+      background: var(--bg-card);
+      border-left:3px solid var(--gold-primary);
+      border-radius:0 var(--radius-md) var(--radius-md) 0;
+      font-style:italic;
+      color: var(--text-secondary);
+      font-size:.9rem;
+      text-align:left;
+    }
+
+    /* ---- INCLUDED ---- */
+    .included { background: var(--bg-secondary); }
+    .included-grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    @media(min-width:480px){ .included-grid { grid-template-columns:1fr 1fr; } }
+    .included-card {
+      background: var(--bg-card);
+      border: var(--border-light);
+      border-radius:var(--radius-lg);
+      padding:24px 20px;
+      box-shadow: var(--shadow-card);
+      position:relative;
+    }
+    .included-card__icon { font-size:1.6rem; margin-bottom:10px; }
+    .included-card h3 { font-size:1rem; margin-bottom:8px; }
+    .included-card p { font-size:.82rem; margin-bottom:14px; }
+    .included-card__tag {
+      display:inline-block;
+      background: rgba(201,147,42,.12);
+      color: var(--gold-dark);
+      font-size:.65rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:4px 10px;
+      border-radius:var(--radius-xl);
+      border: var(--border-gold);
+    }
+
+    /* ---- HOW IT WORKS ---- */
+    .how { background: var(--bg-primary); }
+    .steps {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:24px;
+      max-width:560px;
+      margin:0 auto;
+    }
+    @media(min-width:500px){ .steps { grid-template-columns:repeat(3,1fr); } }
+    .step {
+      text-align:center;
+      padding:28px 20px;
+      background: var(--bg-card);
+      border: var(--border-light);
+      border-radius:var(--radius-lg);
+      box-shadow: var(--shadow-card);
+    }
+    .step__num {
+      width:48px; height:48px;
+      background: var(--gold-grad-btn);
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 14px;
+      font-family: var(--font-heading);
+      font-size:1.3rem;
+      font-weight:700;
+      color: var(--bg-dark);
+    }
+    .step h3 { font-size:.98rem; margin-bottom:8px; }
+    .step p { font-size:.82rem; }
+
+    /* ---- COMPARE ---- */
+    .compare { background: var(--bg-secondary); }
+    .compare__grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:20px;
+    }
+    @media(min-width:500px){ .compare__grid { grid-template-columns:1fr 1fr; } }
+    .compare__col {
+      border-radius:var(--radius-lg);
+      padding:28px 24px;
+      box-shadow: var(--shadow-card);
+    }
+    .compare__col--without {
+      background:#FFF5F5;
+      border:1px solid rgba(180,60,60,.15);
+    }
+    .compare__col--with {
+      background: var(--bg-card);
+      border: var(--border-gold);
+    }
+    .compare__col h3 {
+      font-size:1rem;
+      margin-bottom:18px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(0,0,0,.08);
+    }
+    .compare__item {
+      display:flex; gap:10px; align-items:flex-start;
+      margin-bottom:12px;
+      font-size:.84rem;
+      color: var(--text-secondary);
+    }
+    .compare__item:last-child { margin-bottom:0; }
+    .compare__item .ico { flex-shrink:0; margin-top:1px; }
+
+    /* ---- BONUSES ---- */
+    .bonuses { background: var(--bg-primary); }
+    .bonus-hero {
+      background: var(--bg-card);
+      border:2px solid var(--gold-primary);
+      border-radius:var(--radius-xl);
+      padding:32px 28px;
+      margin-bottom:24px;
+      box-shadow: var(--shadow-divine);
+      position:relative;
+      overflow:hidden;
+    }
+    .bonus-hero::before {
+      content:'BÔNUS DESTAQUE';
+      position:absolute;
+      top:14px; right:-26px;
+      background: var(--gold-grad-btn);
+      color: var(--bg-dark);
+      font-size:.6rem;
+      font-weight:700;
+      letter-spacing:.1em;
+      padding:4px 40px;
+      transform:rotate(45deg);
+    }
+    .bonus-hero__icon { font-size:2.2rem; margin-bottom:12px; }
+    .bonus-hero h3 { font-size:1.2rem; margin-bottom:8px; }
+    .bonus-hero p { font-size:.88rem; margin-bottom:16px; }
+    .bonus-hero__value {
+      display:flex; align-items:center; gap:12px;
+    }
+    .bonus-hero__value .from {
+      font-size:.82rem;
+      color: var(--text-lighter);
+      text-decoration:line-through;
+    }
+    .bonus-hero__value .free {
+      font-family: var(--font-heading);
+      font-size:1.3rem;
+      font-weight:700;
+      color: var(--gold-dark);
+    }
+    .bonuses-list {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    @media(min-width:500px){ .bonuses-list { grid-template-columns:repeat(3,1fr); } }
+    .bonus-item {
+      background: var(--bg-card);
+      border: var(--border-light);
+      border-radius:var(--radius-lg);
+      padding:22px 18px;
+      box-shadow: var(--shadow-card);
+    }
+    .bonus-item__num {
+      font-family: var(--font-heading);
+      font-size:2rem;
+      font-weight:700;
+      color: var(--gold-pale);
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .bonus-item h3 { font-size:.92rem; margin-bottom:8px; }
+    .bonus-item p { font-size:.8rem; margin-bottom:12px; }
+    .bonus-item .from { font-size:.75rem; color:var(--text-lighter); text-decoration:line-through; }
+    .bonuses__total {
+      text-align:center;
+      margin-top:32px;
+      padding:20px;
+      background: var(--bg-dark);
+      border-radius:var(--radius-lg);
+      color: var(--gold-light);
+      font-size:.85rem;
+      letter-spacing:.04em;
+    }
+    .bonuses__total strong {
+      display:block;
+      font-family: var(--font-heading);
+      font-size:1.5rem;
+      color: var(--gold-light);
+      margin-top:4px;
+    }
+
+    /* ---- TESTIMONIALS ---- */
+    .testimonials { background: var(--bg-secondary); }
+    .testi-grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    @media(min-width:480px){ .testi-grid { grid-template-columns:1fr 1fr; } }
+    @media(min-width:720px){ .testi-grid { grid-template-columns:repeat(3,1fr); } }
+    .testi-card {
+      background: var(--bg-card);
+      border: var(--border-light);
+      border-radius:var(--radius-lg);
+      padding:24px 20px;
+      box-shadow: var(--shadow-card);
+    }
+    .testi-stars { color: var(--gold-primary); font-size:1rem; margin-bottom:10px; letter-spacing:2px; }
+    .testi-card blockquote {
+      font-size:.84rem;
+      font-style:italic;
+      color: var(--text-secondary);
+      margin-bottom:16px;
+      line-height:1.6;
+    }
+    .testi-footer { display:flex; align-items:center; gap:12px; }
+    .testi-avatar {
+      width:36px; height:36px;
+      background: var(--gold-grad-btn);
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-family: var(--font-heading);
+      font-weight:700;
+      font-size:1rem;
+      color: var(--bg-dark);
+      flex-shrink:0;
+    }
+    .testi-name { font-size:.8rem; font-weight:700; color: var(--text-primary); }
+    .testi-location { font-size:.72rem; color: var(--text-lighter); }
+
+    /* ---- PRICING ---- */
+    .pricing { background: var(--bg-primary); }
+    .pricing__card {
+      background: var(--bg-card);
+      border:2px solid var(--gold-primary);
+      border-radius:var(--radius-xl);
+      padding:40px 28px;
+      max-width:540px;
+      margin:0 auto;
+      box-shadow: var(--shadow-divine);
+      text-align:center;
+    }
+    .pricing__card-title {
+      font-family: var(--font-heading);
+      font-size:1.3rem;
+      color: var(--gold-dark);
+      margin-bottom:4px;
+      letter-spacing:.06em;
+    }
+    .pricing__includes {
+      text-align:left;
+      margin:24px 0;
+      display:grid;
+      gap:10px;
+    }
+    .pricing__includes-item {
+      display:flex; gap:10px; align-items:flex-start;
+      font-size:.84rem;
+      color: var(--text-secondary);
+    }
+    .pricing__includes-item .chk { color: var(--gold-primary); flex-shrink:0; font-size:1rem; margin-top:1px; }
+    .pricing__price-from {
+      font-size:.88rem;
+      color: var(--text-lighter);
+      text-decoration:line-through;
+      margin-bottom:4px;
+    }
+    .pricing__price-by {
+      font-family: var(--font-heading);
+      font-size:clamp(2.4rem,7vw,3.2rem);
+      font-weight:700;
+      color: var(--gold-dark);
+      line-height:1;
+    }
+    .pricing__price-note {
+      font-size:.72rem;
+      color: var(--text-light);
+      margin-top:4px;
+      margin-bottom:24px;
+      letter-spacing:.04em;
+    }
+    .pricing__badge {
+      display:inline-flex; gap:6px; align-items:center;
+      background:rgba(201,147,42,.1);
+      border:var(--border-gold);
+      border-radius:var(--radius-xl);
+      padding:6px 14px;
+      font-size:.68rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--gold-dark);
+      margin-bottom:24px;
+    }
+    .countdown {
+      display:flex; gap:8px; justify-content:center; align-items:center;
+      margin-bottom:28px;
+    }
+    .countdown__block {
+      background: var(--bg-dark);
+      border-radius:var(--radius-sm);
+      padding:10px 14px;
+      text-align:center;
+      min-width:56px;
+    }
+    .countdown__num {
+      display:block;
+      font-family: var(--font-heading);
+      font-size:1.6rem;
+      font-weight:700;
+      color: var(--gold-light);
+      line-height:1;
+    }
+    .countdown__label {
+      display:block;
+      font-size:.58rem;
+      color: var(--text-lighter);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-top:3px;
+    }
+    .countdown__sep {
+      font-family: var(--font-heading);
+      font-size:1.4rem;
+      color: var(--gold-primary);
+      font-weight:700;
+      margin-bottom:16px;
+    }
+    .pricing__trust {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:12px;
+      margin-top:24px;
+    }
+
+    /* ---- GUARANTEE ---- */
+    .guarantee { background: var(--bg-secondary); }
+    .guarantee__inner {
+      max-width:560px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .guarantee__seal {
+      width:90px; height:90px;
+      background: var(--gold-grad-btn);
+      border-radius:50%;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      margin:0 auto 24px;
+      box-shadow: var(--shadow-gold);
+    }
+    .guarantee__seal-num {
+      font-family: var(--font-heading);
+      font-size:1.8rem;
+      font-weight:700;
+      color: var(--bg-dark);
+      line-height:1;
+    }
+    .guarantee__seal-label {
+      font-size:.6rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: var(--bg-dark);
+    }
+    .guarantee__inner h3 { font-size:1.3rem; margin-bottom:14px; }
+    .guarantee__inner p { font-size:.9rem; }
+
+    /* ---- FAQ ---- */
+    .faq { background: var(--bg-primary); }
+    .faq__list {
+      max-width:600px;
+      margin:0 auto;
+      display:grid;
+      gap:12px;
+    }
+    .faq__item {
+      background: var(--bg-card);
+      border: var(--border-light);
+      border-radius:var(--radius-md);
+      overflow:hidden;
+    }
+    .faq__q {
+      width:100%;
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      background:none;
+      border:none;
+      padding:18px 20px;
+      text-align:left;
+      font-family: var(--font-body);
+      font-size:.88rem;
+      font-weight:700;
+      color: var(--text-primary);
+      cursor:pointer;
+      transition:background .15s;
+    }
+    .faq__q:hover { background: rgba(201,147,42,.05); }
+    .faq__icon {
+      flex-shrink:0;
+      width:20px; height:20px;
+      border-radius:50%;
+      background: rgba(201,147,42,.12);
+      color: var(--gold-primary);
+      display:flex; align-items:center; justify-content:center;
+      font-size:.9rem;
+      font-weight:700;
+      transition:transform .25s;
+    }
+    .faq__item.open .faq__icon { transform:rotate(45deg); }
+    .faq__a {
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease, padding .3s ease;
+      padding:0 20px;
+    }
+    .faq__item.open .faq__a {
+      max-height:300px;
+      padding:0 20px 18px;
+    }
+    .faq__a p { font-size:.84rem; }
+
+    /* ---- LAST CALL ---- */
+    .lastcall {
+      background: var(--bg-dark);
+      text-align:center;
+      padding:64px 0;
+    }
+    .lastcall .eyebrow { color: var(--gold-light); }
+    .lastcall h2 { color: var(--gold-light); margin-bottom:16px; }
+    .lastcall p { color: rgba(242,222,166,.75); font-size:.92rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background:#1A0E04;
+      color: rgba(154,122,83,.8);
+      padding:40px 0 28px;
+      font-size:.72rem;
+      line-height:1.7;
+    }
+    .footer__links {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:12px 20px;
+      margin-bottom:20px;
+    }
+    .footer__links a { color: var(--text-lighter); }
+    .footer__links a:hover { color: var(--gold-light); }
+    footer hr { border:none; border-top:1px solid rgba(154,122,83,.15); margin:20px 0; }
+    .footer__legal { text-align:center; max-width:600px; margin:0 auto; }
+    .footer__legal p { margin-bottom:8px; color:rgba(154,122,83,.65); }
+    .footer__logo {
+      font-family: var(--font-script);
+      font-size:1.8rem;
+      color: var(--gold-primary);
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    /* ---- STICKY BAR ---- */
+    .sticky-bar {
+      position:fixed;
+      bottom:0; left:0; right:0;
+      background: var(--bg-dark);
+      border-top:1px solid rgba(201,147,42,.3);
+      padding:12px 20px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      z-index:1000;
+      transform:translateY(100%);
+      transition:transform .35s cubic-bezier(.4,0,.2,1);
+      box-shadow:0 -4px 20px rgba(0,0,0,.4);
+    }
+    .sticky-bar.visible { transform:translateY(0); }
+    .sticky-bar__text {
+      font-size:.75rem;
+      color: var(--gold-pale);
+      line-height:1.3;
+    }
+    .sticky-bar__text strong { color: var(--gold-light); display:block; font-size:.85rem; }
+    .sticky-bar .btn-cta { padding:12px 20px; font-size:.8rem; white-space:nowrap; }
+
+    /* ---- COOKIE BANNER ---- */
+    .cookie-banner {
+      position:fixed;
+      bottom:0; left:0; right:0;
+      background: #1A0E04;
+      border-top:1px solid rgba(201,147,42,.25);
+      padding:16px 20px;
+      z-index:2000;
+      display:none;
+    }
+    .cookie-banner.show { display:block; }
+    .cookie-banner p {
+      font-size:.75rem;
+      color: rgba(242,222,166,.75);
+      margin-bottom:12px;
+    }
+    .cookie-banner a { color: var(--gold-light); }
+    .cookie-banner__btns { display:flex; flex-wrap:wrap; gap:8px; }
+    .cookie-btn {
+      padding:8px 16px;
+      border-radius:var(--radius-xl);
+      font-size:.72rem;
+      font-weight:700;
+      cursor:pointer;
+      border:none;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .cookie-btn--accept {
+      background: var(--gold-grad-btn);
+      color: var(--bg-dark);
+    }
+    .cookie-btn--decline {
+      background:transparent;
+      color: var(--text-lighter);
+      border:1px solid rgba(154,122,83,.3);
+    }
+    .cookie-btn--config {
+      background:transparent;
+      color: var(--gold-light);
+      border:1px solid rgba(201,147,42,.3);
+    }
+
+    /* ---- FOCUS / A11Y ---- */
+    :focus-visible {
+      outline:2px solid var(--gold-primary);
+      outline-offset:3px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP BAR -->
+  <div class="topbar" role="banner">
+    ✦ Oferta especial por tempo limitado
+    <span class="sep">·</span>
+    De <span>R$ {{PREENCHER_PRECO_DE}}</span> por <span>R$ {{PREENCHER_PRECO_POR}}</span>
+    <span class="sep">·</span>
+    Acesso digital imediato
+    <span class="sep">·</span>
+    Garantia de 7 dias
+  </div>
+
+  <!-- 2. DISCLAIMER DE DIVULGAÇÃO PUBLICITÁRIA -->
+  <div class="ad-notice" role="note">
+    ▸ Esta é uma página de divulgação publicitária.
+    <a href="/disclaimer/" aria-label="Ver disclaimer completo">Ver aviso completo →</a>
+  </div>
+
+  <!-- 3. HERO -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="container">
+      <div class="hero__text">
+        <span class="hero__eyebrow">Sacrário do Rosário</span>
+        <h1 id="hero-h1">
+          Chega de rezar sem saber o que está fazendo.<br>
+          <em>Sua devoção a Maria merece estrutura, método e profundidade.</em>
+        </h1>
+        <p class="hero__desc">
+          Uma jornada de 21 dias pelos 20 Mistérios do Rosário — com meditações guiadas, rosário virtual interativo, biblioteca espiritual completa e comunidade de oração. Tudo o que você precisa para rezar com fé de verdade.
+        </p>
+        <a href="{{PREENCHER_CHECKOUT_URL}}" class="btn-cta" aria-label="Quero meu acesso ao Sacrário do Rosário">
+          <span>✦ Quero meu acesso</span>
+          <span class="arrow">→</span>
+        </a>
+        <div class="hero__badges" role="list">
+          <span class="hero__badge" role="listitem">📿 +8.500 fiéis</span>
+          <span class="hero__badge" role="listitem">🛡️ Garantia 7 dias</span>
+          <span class="hero__badge" role="listitem">⚡ Acesso imediato</span>
+        </div>
+      </div>
+
+      <!-- Mockup SVG inline — sem imagens externas -->
+      <div class="hero__mockup" aria-hidden="true">
+        <svg viewBox="0 0 200 340" xmlns="http://www.w3.org/2000/svg" role="img">
+          <title>Mockup do Sacrário do Rosário</title>
+          <!-- Telefone -->
+          <rect x="20" y="10" width="160" height="320" rx="20" fill="#2A1A08" stroke="#C9932A" stroke-width="1.5"/>
+          <rect x="28" y="22" width="144" height="296" rx="14" fill="#FBF3DE"/>
+          <!-- Tela conteúdo -->
+          <rect x="28" y="22" width="144" height="48" rx="14" fill="#1A0E04"/>
+          <rect x="28" y="48" width="144" height="22" fill="#1A0E04"/>
+          <text x="100" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#E8C97A">✦ Sacrário do Rosário</text>
+          <text x="100" y="66" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#9A7A53">Dia 14 · Mistérios Gloriosos</text>
+          <!-- Progresso -->
+          <rect x="36" y="80" width="128" height="5" rx="3" fill="#F2E4C0"/>
+          <rect x="36" y="80" width="90" height="5" rx="3" fill="#C9932A"/>
+          <text x="100" y="97" text-anchor="middle" font-family="Georgia,serif" font-size="7.5" fill="#9A7A53">67% concluído · 14/21 dias</text>
+          <!-- Card de oração -->
+          <rect x="36" y="106" width="128" height="70" rx="10" fill="#FFFBEF" stroke="#E8C97A" stroke-width="1"/>
+          <text x="100" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#C9932A">✦ Reflexão de hoje</text>
+          <text x="44" y="137" font-family="Georgia,serif" font-size="6.5" fill="#5A3D1F">"Maria guardava todas essas</text>
+          <text x="44" y="148" font-family="Georgia,serif" font-size="6.5" fill="#5A3D1F">coisas no coração."</text>
+          <text x="44" y="164" font-family="Georgia,serif" font-size="6" fill="#9A7A53">Lucas 2,19</text>
+          <!-- Rosário mini -->
+          <circle cx="100" cy="210" r="32" fill="none" stroke="#E8C97A" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <circle cx="100" cy="210" r="6" fill="#C9932A"/>
+          <text x="100" y="214" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#FBF3DE">✠</text>
+          <!-- Contas do rosário -->
+          <circle cx="100" cy="178" r="4" fill="#C9932A"/>
+          <circle cx="120" cy="183" r="3" fill="#E8C97A"/>
+          <circle cx="132" cy="197" r="3" fill="#E8C97A"/>
+          <circle cx="132" cy="213" r="3" fill="#E8C97A"/>
+          <circle cx="120" cy="227" r="3" fill="#E8C97A"/>
+          <circle cx="100" cy="242" r="4" fill="#C9932A"/>
+          <circle cx="80" cy="227" r="3" fill="#E8C97A"/>
+          <circle cx="68" cy="213" r="3" fill="#E8C97A"/>
+          <circle cx="68" cy="197" r="3" fill="#E8C97A"/>
+          <circle cx="80" cy="183" r="3" fill="#E8C97A"/>
+          <!-- Nav bar -->
+          <rect x="28" y="290" width="144" height="28" rx="0" fill="#F2E4C0"/>
+          <rect x="28" y="304" width="144" height="14" rx="0" fill="#F2E4C0"/>
+          <text x="55" y="308" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#9A7A53">📿</text>
+          <text x="82" y="308" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#9A7A53">🙏</text>
+          <text x="100" y="307" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C9932A">⛪</text>
+          <text x="120" y="308" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#9A7A53">📖</text>
+          <text x="147" y="308" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#9A7A53">👤</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. STATS -->
+  <div class="stats" role="region" aria-label="Números do Sacrário do Rosário">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__item">
+          <span class="stats__num">+8.500</span>
+          <span class="stats__label">Fiéis na jornada</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__num">20</span>
+          <span class="stats__label">Mistérios guiados</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__num">7</span>
+          <span class="stats__label">Dias de garantia</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__num">4,9 ★</span>
+          <span class="stats__label">Avaliação média</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. O PROBLEMA -->
+  <section class="problem" aria-labelledby="problem-h2">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">O problema que ninguém fala</span>
+        <h2 id="problem-h2">Rezar o Rosário parece simples.<br><em>Mas por que é tão difícil manter?</em></h2>
+      </div>
+      <div class="cards-grid">
+        <div class="problem-card">
+          <div class="problem-card__icon">😶</div>
+          <h3>A oração fica mecânica</h3>
+          <p>Você recita as palavras, mas a mente vai embora. No final, sente que rezou "no automático" — sem conexão, sem sentido, sem fruto.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__icon">📅</div>
+          <h3>Não sabe qual Mistério rezar</h3>
+          <p>Segunda é Gozoso? Quinta é Luminoso? A confusão sobre o calendário dos Mistérios vira desculpa para pular a oração do dia.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__icon">🌀</div>
+          <h3>Falta constância e método</h3>
+          <p>Você começa com fervor, mas sem uma estrutura diária, a devoção esfria. Às vezes passa semanas sem rezar — e a culpa pesa.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card__icon">🚪</div>
+          <h3>Não sente conexão com Maria</h3>
+          <p>Reza, mas não medita. Conhece as palavras, mas não contempla os Mistérios. A sensação é de que algo está faltando — e está.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. A SOLUÇÃO -->
+  <section class="solution" aria-labelledby="solution-h2">
+    <div class="container">
+      <div class="solution__inner">
+        <span class="eyebrow">A solução completa</span>
+        <h2 id="solution-h2">O Sacrário do Rosário é o método que vai transformar sua oração de <em>rotina em encontro</em></h2>
+        <p>
+          Não é só um guia de orações. É uma jornada de 21 dias estruturada para você rezar os 20 Mistérios com profundidade, entender cada dezena, meditar com o coração aberto e manter a devoção viva — todos os dias.
+        </p>
+        <a href="{{PREENCHER_CHECKOUT_URL}}" class="btn-cta">
+          ✦ Quero começar minha jornada
+        </a>
+        <blockquote class="solution__quote">
+          "O Rosário é a arma para os tempos de hoje. Quem reza com método e constância recebe graças que a mente humana não consegue calcular." — São Pio de Pietrelcina
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. O QUE ESTÁ INCLUÍDO -->
+  <section class="included" aria-labelledby="included-h2">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">O que está incluído</span>
+        <h2 id="included-h2">Tudo o que você precisa para<br><em>uma devoção mariana completa</em></h2>
+      </div>
+      <div class="included-grid">
+        <div class="included-card">
+          <div class="included-card__icon">🌹</div>
+          <h3>Jornada de 21 Dias</h3>
+          <p>21 reflexões diárias aprofundadas — uma para cada dia — guiando você pelos Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos com meditação e intenção de oração.</p>
+          <span class="included-card__tag">Conteúdo principal</span>
+        </div>
+        <div class="included-card">
+          <div class="included-card__icon">📿</div>
+          <h3>Rosário Virtual Interativo</h3>
+          <p>Reze o Rosário completo guiado pela tela — conta por conta, dezena por dezena — com todas as orações, contemplações e o calendário semanal dos Mistérios.</p>
+          <span class="included-card__tag">Método prático</span>
+        </div>
+        <div class="included-card">
+          <div class="included-card__icon">✠</div>
+          <h3>20 Mistérios com Meditação</h3>
+          <p>Cada um dos 20 Mistérios tem texto de contemplação próprio — para que a Ave Maria deixe de ser mecânica e se torne um ato de fé consciente.</p>
+          <span class="included-card__tag">Conteúdo principal</span>
+        </div>
+        <div class="included-card">
+          <div class="included-card__icon">📖</div>
+          <h3>Biblioteca Espiritual</h3>
+          <p>Salve Rainha, Angelus, Magnificat, Memorare, Ladainha de Nossa Senhora, Consagração ao Imaculado Coração, orações de cura, perdão e proteção da família.</p>
+          <span class="included-card__tag">Recursos complementares</span>
+        </div>
+        <div class="included-card">
+          <div class="included-card__icon">🙏</div>
+          <h3>Comunidade de Oração</h3>
+          <p>Publique pedidos de oração e reze pelos pedidos dos irmãos da comunidade. A batalha espiritual é mais leve quando travada em conjunto.</p>
+          <span class="included-card__tag">Batalha espiritual</span>
+        </div>
+        <div class="included-card">
+          <div class="included-card__icon">🕯️</div>
+          <h3>Velas Virtuais</h3>
+          <p>Acenda uma vela virtual com intenção de oração e mantenha ela acesa durante o período que desejar — um símbolo de entrega e persistência na fé.</p>
+          <span class="included-card__tag">Devoção mariana</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. COMO FUNCIONA -->
+  <section class="how" aria-labelledby="how-h2">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Simples de começar</span>
+        <h2 id="how-h2">Como funciona em<br><em>3 passos</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num" aria-hidden="true">1</div>
+          <h3>Acesse</h3>
+          <p>Após a confirmação do pagamento, você recebe acesso imediato no celular. Sem app para instalar — direto no navegador.</p>
+        </div>
+        <div class="step">
+          <div class="step__num" aria-hidden="true">2</div>
+          <h3>Escolha a intenção</h3>
+          <p>Defina a intenção de oração do dia e deixe o Sacrário te guiar pelo Mistério correspondente com meditação e contemplação.</p>
+        </div>
+        <div class="step">
+          <div class="step__num" aria-hidden="true">3</div>
+          <h3>Reze com convicção</h3>
+          <p>Cada dezena guiada transforma a Ave Maria de repetição em contemplação. 21 dias depois, você nunca mais reza do mesmo jeito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. COMPARE A DIFERENÇA -->
+  <section class="compare" aria-labelledby="compare-h2">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">A diferença na prática</span>
+        <h2 id="compare-h2">Antes e depois do<br><em>Sacrário do Rosário</em></h2>
+      </div>
+      <div class="compare__grid">
+        <div class="compare__col compare__col--without">
+          <h3>😔 Sem o Sacrário</h3>
+          <div class="compare__item"><span class="ico">✗</span><span>Reza no automático sem meditar nos Mistérios</span></div>
+          <div class="compare__item"><span class="ico">✗</span><span>Não sabe qual Mistério corresponde a cada dia</span></div>
+          <div class="compare__item"><span class="ico">✗</span><span>Abandona a devoção após poucos dias sem rotina</span></div>
+          <div class="compare__item"><span class="ico">✗</span><span>Sente a oração vazia e sem conexão com Maria</span></div>
+          <div class="compare__item"><span class="ico">✗</span><span>Não tem onde buscar orações complementares</span></div>
+          <div class="compare__item"><span class="ico">✗</span><span>Ora sozinha, sem comunidade que sustente a jornada</span></div>
+        </div>
+        <div class="compare__col compare__col--with">
+          <h3>✝️ Com o Sacrário</h3>
+          <div class="compare__item"><span class="ico" style="color:var(--gold-primary)">✓</span><span>Medita cada dezena com contemplação e intenção própria</span></div>
+          <div class="compare__item"><span class="ico" style="color:var(--gold-primary)">✓</span><span>Sabe exatamente qual Mistério rezar em cada dia da semana</span></div>
+          <div class="compare__item"><span class="ico" style="color:var(--gold-primary)">✓</span><span>Tem estrutura diária de 21 dias que mantém a constância</span></div>
+          <div class="compare__item"><span class="ico" style="color:var(--gold-primary)">✓</span><span>Sente conexão real com Maria a cada rosário rezado</span></div>
+          <div class="compare__item"><span class="ico" style="color:var(--gold-primary)">✓</span><span>Biblioteca completa com Salve Rainha, Angelus, Ladainha e mais</span></div>
+          <div class="compare__item"><span class="ico" style="color:var(--gold-primary)">✓</span><span>Comunidade de oração que reza junto pelos seus pedidos</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. BÔNUS EXCLUSIVOS -->
+  <section class="bonuses" aria-labelledby="bonuses-h2">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Bônus exclusivos</span>
+        <h2 id="bonuses-h2">Além da jornada completa,<br><em>você recebe gratuitamente</em></h2>
+      </div>
+
+      <div class="bonus-hero">
+        <div class="bonus-hero__icon">🎧</div>
+        <h3>Módulo de Áudio — Meditações Guiadas</h3>
+        <p>Áudios exclusivos para cada reflexão da Jornada de 21 Dias. Ouça no caminho do trabalho, antes de dormir ou enquanto reza — a meditação no seu ritmo, na sua voz.</p>
+        <div class="bonus-hero__value">
+          <span class="from">De R$ 97,00</span>
+          <span class="free">✦ GRÁTIS para você</span>
+        </div>
+      </div>
+
+      <div class="bonuses-list">
+        <div class="bonus-item">
+          <div class="bonus-item__num">01</div>
+          <h3>Oração de Limpeza Espiritual</h3>
+          <p>Uma oração de proteção e libertação espiritual — para abrir espaço na alma antes de entrar no Sacrário.</p>
+          <span class="from">De R$ 47,00 — GRÁTIS</span>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-item__num">02</div>
+          <h3>Calendário Semanal dos Mistérios</h3>
+          <p>Guia definitivo: qual Mistério rezar em cada dia da semana, com nota sobre os dias especiais do calendário litúrgico.</p>
+          <span class="from">De R$ 27,00 — GRÁTIS</span>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-item__num">03</div>
+          <h3>Guia das 15 Promessas do Rosário</h3>
+          <p>As 15 promessas que Nossa Senhora fez a São Domingos para quem reza o Rosário com fidelidade — com explicação de cada uma.</p>
+          <span class="from">De R$ 37,00 — GRÁTIS</span>
+        </div>
+      </div>
+
+      <div class="bonuses__total">
+        Valor total dos bônus
+        <strong>R$ 208,00 — incluídos sem custo adicional</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. DEPOIMENTOS -->
+  <section class="testimonials" aria-labelledby="testi-h2">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Quem já viveu a jornada</span>
+        <h2 id="testi-h2">O que os fiéis estão<br><em>dizendo</em></h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"Rezava o Rosário há anos mas nunca tinha entendido os Mistérios de verdade. Com o Sacrário, cada dezena ganhou vida. Finalmente me conectei com Maria de um jeito que nunca imaginei."</blockquote>
+          <div class="testi-footer">
+            <div class="testi-avatar" aria-hidden="true">A</div>
+            <div>
+              <div class="testi-name">Ana Paula S.</div>
+              <div class="testi-location">Belo Horizonte, MG</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"Sempre tive dificuldade de manter a constância. Os 21 dias foram transformadores — pela primeira vez na minha vida rezei o Rosário todos os dias sem falhar nem um."</blockquote>
+          <div class="testi-footer">
+            <div class="testi-avatar" aria-hidden="true">C</div>
+            <div>
+              <div class="testi-name">Cristiane M.</div>
+              <div class="testi-location">Fortaleza, CE</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"O Módulo de Áudio foi uma revelação. Ouço a reflexão do dia no caminho do trabalho e chego em casa já preparada para rezar. Nunca mais pulo o Rosário."</blockquote>
+          <div class="testi-footer">
+            <div class="testi-avatar" aria-hidden="true">M</div>
+            <div>
+              <div class="testi-name">Márcia O.</div>
+              <div class="testi-location">São Paulo, SP</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"Jamais soube que Nossa Senhora tinha feito 15 promessas ao rezar o Rosário com fidelidade. O guia dos bônus mudou minha perspectiva completamente. Vale muito mais do que o investimento."</blockquote>
+          <div class="testi-footer">
+            <div class="testi-avatar" aria-hidden="true">R</div>
+            <div>
+              <div class="testi-name">Rosana F.</div>
+              <div class="testi-location">Curitiba, PR</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"Comprei para rezar junto com minha mãe que mora longe. A gente acende a vela virtual com a mesma intenção todo dia. Me emocionou profundamente. Obrigada."</blockquote>
+          <div class="testi-footer">
+            <div class="testi-avatar" aria-hidden="true">L</div>
+            <div>
+              <div class="testi-name">Luciana B.</div>
+              <div class="testi-location">Recife, PE</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars" aria-label="5 estrelas">★★★★★</div>
+          <blockquote>"Sou leigo e sempre tive vergonha de admitir que não sabia rezar o Rosário direito. O Sacrário ensinou sem julgamento. Agora rezo com minha família toda segunda-feira."</blockquote>
+          <div class="testi-footer">
+            <div class="testi-avatar" aria-hidden="true">J</div>
+            <div>
+              <div class="testi-name">José Alberto N.</div>
+              <div class="testi-location">Goiânia, GO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. PRICING -->
+  <section class="pricing" id="pricing" aria-labelledby="pricing-h2">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Investimento</span>
+        <h2 id="pricing-h2">Acesse o Sacrário do Rosário<br><em>por um investimento único</em></h2>
+      </div>
+      <div class="pricing__card">
+        <p class="pricing__card-title">✦ Acesso Completo ✦</p>
+        <div class="ornament">✦</div>
+
+        <div class="pricing__includes" role="list">
+          <div class="pricing__includes-item" role="listitem"><span class="chk">✦</span><span>Jornada de 21 Dias com reflexões diárias</span></div>
+          <div class="pricing__includes-item" role="listitem"><span class="chk">✦</span><span>Rosário Virtual Interativo com os 20 Mistérios</span></div>
+          <div class="pricing__includes-item" role="listitem"><span class="chk">✦</span><span>Biblioteca Espiritual completa</span></div>
+          <div class="pricing__includes-item" role="listitem"><span class="chk">✦</span><span>Comunidade de Oração + Velas Virtuais</span></div>
+          <div class="pricing__includes-item" role="listitem"><span class="chk">✦</span><span>Acesso vitalício — sem assinatura</span></div>
+          <div class="pricing__includes-item" role="listitem"><span class="chk">✦</span><span>🎁 Bônus: Módulo de Áudio (R$ 97)</span></div>
+          <div class="pricing__includes-item" role="listitem"><span class="chk">✦</span><span>🎁 Bônus: Oração de Limpeza Espiritual (R$ 47)</span></div>
+          <div class="pricing__includes-item" role="listitem"><span class="chk">✦</span><span>🎁 Bônus: Calendário dos Mistérios (R$ 27)</span></div>
+          <div class="pricing__includes-item" role="listitem"><span class="chk">✦</span><span>🎁 Bônus: Guia das 15 Promessas (R$ 37)</span></div>
+        </div>
+
+        <div class="ornament">✦</div>
+        <p class="pricing__price-from">De R$ {{PREENCHER_PRECO_DE}}</p>
+        <p class="pricing__price-by">R$ {{PREENCHER_PRECO_POR}}</p>
+        <p class="pricing__price-note">Pagamento único · Sem mensalidade · Acesso imediato</p>
+
+        <div class="pricing__badge" role="note">
+          🔒 Pagamento único · Sem renovação automática
+        </div>
+
+        <p style="font-size:.78rem;color:var(--text-light);margin-bottom:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;">Oferta encerra em</p>
+        <div class="countdown" aria-label="Contador regressivo da oferta">
+          <div class="countdown__block">
+            <span class="countdown__num" id="cd-h">00</span>
+            <span class="countdown__label">horas</span>
+          </div>
+          <span class="countdown__sep" aria-hidden="true">:</span>
+          <div class="countdown__block">
+            <span class="countdown__num" id="cd-m">00</span>
+            <span class="countdown__label">min</span>
+          </div>
+          <span class="countdown__sep" aria-hidden="true">:</span>
+          <div class="countdown__block">
+            <span class="countdown__num" id="cd-s">00</span>
+            <span class="countdown__label">seg</span>
+          </div>
+        </div>
+
+        <a href="{{PREENCHER_CHECKOUT_URL}}" class="btn-cta full" style="font-size:1.05rem;padding:20px 32px;">
+          ✦ Quero meu acesso agora →
+        </a>
+
+        <div class="pricing__trust" role="list">
+          <span class="hero__badge" role="listitem">🔒 Pagamento seguro</span>
+          <span class="hero__badge" role="listitem">🛡️ Garantia 7 dias</span>
+          <span class="hero__badge" role="listitem">⚡ Acesso imediato</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. GARANTIA -->
+  <section class="guarantee" aria-labelledby="guarantee-h3">
+    <div class="container">
+      <div class="guarantee__inner">
+        <div class="guarantee__seal" aria-hidden="true">
+          <span class="guarantee__seal-num">7</span>
+          <span class="guarantee__seal-label">dias</span>
+        </div>
+        <h3 id="guarantee-h3">Garantia incondicional de <em>7 dias</em></h3>
+        <p>
+          Se por qualquer motivo você não ficar satisfeita com o Sacrário do Rosário nos primeiros 7 dias após o acesso, basta enviar uma mensagem e devolvemos 100% do valor pago — sem perguntas, sem burocracia. Queremos que você entre com a alma tranquila e saia transformada.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. FAQ -->
+  <section class="faq" aria-labelledby="faq-h2">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2 id="faq-h2">Respostas para as<br><em>perguntas mais comuns</em></h2>
+      </div>
+      <div class="faq__list" role="list">
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a1">
+            Como recebo o acesso após o pagamento?
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a" id="faq-a1" role="region">
+            <p>Imediatamente após a confirmação do pagamento, você recebe um e-mail com o link de acesso e as instruções de primeiro login. O acesso é pelo navegador — sem necessidade de instalar nenhum aplicativo.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a2">
+            O acesso é vitalício ou tem prazo?
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a" id="faq-a2" role="region">
+            <p>Vitalício. Você paga uma vez e tem acesso para sempre — inclusive a todas as atualizações e novos conteúdos que forem adicionados ao Sacrário. Sem assinatura, sem renovação automática.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a3">
+            Precisa saber rezar o Rosário para começar?
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a" id="faq-a3" role="region">
+            <p>Não. O Sacrário foi criado tanto para quem já reza o Rosário há anos quanto para quem está começando agora. O Rosário Virtual Interativo guia você conta por conta, com todas as orações na tela. Não precisa saber nada de cor para começar.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a4">
+            Como funciona a garantia de 7 dias?
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a" id="faq-a4" role="region">
+            <p>Se dentro dos primeiros 7 dias você quiser o reembolso, basta enviar uma mensagem para o suporte — sem precisar justificar o motivo. Devolvemos 100% do valor em até 5 dias úteis. A garantia é sua proteção para entrar sem risco.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a5">
+            Quais formas de pagamento são aceitas?
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a" id="faq-a5" role="region">
+            <p>Cartão de crédito (até 12x), Pix e boleto bancário. O pagamento é processado por plataforma certificada com criptografia SSL — seus dados estão completamente seguros.</p>
+          </div>
+        </div>
+
+        <div class="faq__item" role="listitem">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq-a6">
+            Posso acessar pelo celular e pelo computador?
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a" id="faq-a6" role="region">
+            <p>Sim. O Sacrário do Rosário funciona em qualquer dispositivo com navegador — celular, tablet ou computador. É otimizado para mobile, então funciona perfeitamente mesmo rezando com o celular na mão.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. ÚLTIMA CHAMADA -->
+  <section class="lastcall" aria-labelledby="lastcall-h2">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow">Não adie sua jornada</span>
+      <h2 id="lastcall-h2">Maria está esperando por você.<br><em>O Sacrário está aberto.</em></h2>
+      <p>Mais de 8.500 fiéis já iniciaram a jornada. Cada dia que passa é uma dezena de Ave Marias que poderia ter transformado sua semana. Comece hoje.</p>
+      <a href="{{PREENCHER_CHECKOUT_URL}}" class="btn-cta" style="font-size:1.1rem;padding:20px 40px;">
+        ✦ Quero entrar no Sacrário agora →
+      </a>
+      <p style="margin-top:20px;font-size:.75rem;color:rgba(242,222,166,.45);letter-spacing:.06em;">
+        🔒 Pagamento seguro · Garantia de 7 dias · Acesso imediato
+      </p>
+    </div>
+  </section>
+
+  <!-- 16. FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer__logo">Sacrário do Rosário</div>
+      <div class="footer__links" role="navigation" aria-label="Links legais">
+        <a href="/termos/">Termos de Uso</a>
+        <a href="/privacidade/">Privacidade</a>
+        <a href="/disclaimer/">Disclaimer</a>
+        <a href="mailto:{{PREENCHER_EMAIL_SUPORTE}}">Contato</a>
+      </div>
+      <hr>
+      <div class="footer__legal">
+        <p><strong style="color:var(--text-lighter);">{{PREENCHER_RAZAO_SOCIAL}}</strong> — CNPJ {{PREENCHER_CNPJ}}</p>
+        <p>{{PREENCHER_ENDERECO}} — © 2026 Todos os direitos reservados.</p>
+        <hr style="margin:14px 0;">
+        <p>Este produto não é afiliado, patrocinado ou endossado pelo Facebook, Instagram, Meta Platforms Inc. ou qualquer de suas subsidiárias. Os nomes Facebook® e Instagram® são marcas registradas de Meta Platforms Inc.</p>
+        <p style="margin-top:8px;">Os resultados apresentados nesta página são individuais e podem variar de acordo com a dedicação, disciplina e comprometimento de cada pessoa com a prática da oração. Não há garantia de resultados espirituais específicos. A devoção ao Rosário é uma prática de fé pessoal.</p>
+        <p style="margin-top:8px;">O Sacrário do Rosário é um produto digital de natureza devocional e educacional. Todo o conteúdo é de propriedade intelectual de <strong style="color:var(--text-lighter);">{{PREENCHER_RAZAO_SOCIAL}}</strong> e é protegido por direitos autorais. É proibida a reprodução, distribuição ou compartilhamento não autorizado.</p>
+        <p style="margin-top:8px;"><a href="/disclaimer/" style="color:var(--gold-dark);">Esta é uma página de divulgação publicitária.</a> Para mais informações, acesse nossa <a href="/privacidade/" style="color:var(--gold-dark);">Política de Privacidade</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 17. STICKY BOTTOM BAR -->
+  <div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Oferta especial">
+    <div class="sticky-bar__text">
+      <strong>Sacrário do Rosário</strong>
+      De R$ {{PREENCHER_PRECO_DE}} por R$ {{PREENCHER_PRECO_POR}} · Acesso vitalício
+    </div>
+    <a href="{{PREENCHER_CHECKOUT_URL}}" class="btn-cta" aria-label="Quero meu acesso ao Sacrário do Rosário">
+      Quero acesso →
+    </a>
+  </div>
+
+  <!-- 18. COOKIE BANNER -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-modal="false">
+    <p id="cookie-title">
+      Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa
+      <a href="/privacidade/">Política de Privacidade</a>.
+    </p>
+    <div class="cookie-banner__btns">
+      <button class="cookie-btn cookie-btn--accept" id="cookie-accept">Aceitar todos</button>
+      <button class="cookie-btn cookie-btn--decline" id="cookie-decline">Recusar</button>
+      <button class="cookie-btn cookie-btn--config" id="cookie-config">Configurar</button>
+    </div>
+  </div>
+
+  <script>
+    /* ---- FAQ ACCORDION ---- */
+    document.querySelectorAll('.faq__q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq__item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq__item.open').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq__q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ---- COUNTDOWN ---- */
+    (function() {
+      var key = 'sacrario_cd_end';
+      var stored = localStorage.getItem(key);
+      var end;
+      if (stored) {
+        end = parseInt(stored, 10);
+      } else {
+        end = Date.now() + 23 * 3600 * 1000 + 47 * 60 * 1000 + 33 * 1000;
+        localStorage.setItem(key, end);
+      }
+      var hEl = document.getElementById('cd-h');
+      var mEl = document.getElementById('cd-m');
+      var sEl = document.getElementById('cd-s');
+      function tick() {
+        var diff = Math.max(0, end - Date.now());
+        var h = Math.floor(diff / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        hEl.textContent = String(h).padStart(2, '0');
+        mEl.textContent = String(m).padStart(2, '0');
+        sEl.textContent = String(s).padStart(2, '0');
+        if (diff > 0) requestAnimationFrame(function() { setTimeout(tick, 1000); });
+      }
+      tick();
+    })();
+
+    /* ---- STICKY BAR (IntersectionObserver) ---- */
+    (function() {
+      var bar = document.getElementById('sticky-bar');
+      var hero = document.querySelector('.hero');
+      if (!hero || !bar) return;
+      var obs = new IntersectionObserver(function(entries) {
+        bar.classList.toggle('visible', !entries[0].isIntersecting);
+      }, { threshold: 0 });
+      obs.observe(hero);
+    })();
+
+    /* ---- COOKIE BANNER ---- */
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      var stored = localStorage.getItem('cookie_consent');
+      if (!stored) banner.classList.add('show');
+
+      function save(marketing) {
+        localStorage.setItem('cookie_consent', JSON.stringify({ marketing: marketing }));
+        banner.classList.remove('show');
+        if (marketing) injectPixel();
+      }
+
+      document.getElementById('cookie-accept').addEventListener('click', function() { save(true); });
+      document.getElementById('cookie-decline').addEventListener('click', function() { save(false); });
+      document.getElementById('cookie-config').addEventListener('click', function() {
+        var ok = confirm('Deseja aceitar cookies de marketing para uma experiência personalizada?');
+        save(ok);
+      });
+
+      function injectPixel() {
+        /* Gating — só injetar tracking com consentimento marketing */
+        var c = JSON.parse(localStorage.getItem('cookie_consent') || '{}');
+        if (!c.marketing) return;
+        /* Substitua pela tag do pixel real quando disponível */
+        /* Exemplo Utmify: */
+        /* (function(w,d,s,u){...})(window,document,'script','{{PREENCHER_PIXEL_ID}}'); */
+      }
+
+      /* Verificar na carga se já há consentimento marketing */
+      if (stored) {
+        try {
+          var c = JSON.parse(stored);
+          if (c && c.marketing) injectPixel();
+        } catch(e) {}
+      }
+    })();
+  </script>
+</body>
+</html>
