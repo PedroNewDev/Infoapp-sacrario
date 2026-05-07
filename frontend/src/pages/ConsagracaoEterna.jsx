@@ -18,7 +18,7 @@ export default function ConsagracaoEterna() {
   if (usuario?.acesso_vitalicio) {
     return (
       <div className="consagracao-page">
-        <Header />
+        <Header compact />
         <div className="page-container">
           <div className="consagracao-page__content fade-in">
             <span className="consagracao-page__icon-main">✦</span>

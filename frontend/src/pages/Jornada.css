@@ -44,30 +44,47 @@
 }
 
 .jornada-page__dia--concluido {
-  background: rgba(201, 147, 42, 0.15);
-  border-color: var(--gold-primary);
+  background: #C9932A;
+  border-color: #C9932A;
+  color: #fff;
 }
 
 .jornada-page__dia--atual {
-  border-color: var(--gold-primary);
-  box-shadow: 0 0 0 3px rgba(201, 147, 42, 0.2);
-  animation: pulse 2s infinite;
+  border-color: #C9932A;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(201, 147, 42, 0.25);
 }
 
 .jornada-page__dia--disponivel {
   border-color: var(--gold-light);
+  background: var(--bg-card);
 }
 
 .jornada-page__dia--bloqueado {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
+  background: #e8e4dc;
+  border-color: transparent;
+}
+
+.jornada-page__dia--concluido .jornada-page__num {
+  color: #fff;
+  font-size: 10px;
 }
 
 .jornada-page__check {
   font-size: 14px;
-  color: var(--gold-primary);
   font-weight: 700;
   line-height: 1;
+}
+
+.jornada-page__dia--concluido .jornada-page__check {
+  color: #fff;
+}
+
+.jornada-page__dia--atual .jornada-page__check,
+.jornada-page__dia--disponivel .jornada-page__check {
+  color: var(--gold-primary);
 }
 
 .jornada-page__lock {

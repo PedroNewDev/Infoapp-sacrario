@@ -117,7 +117,7 @@ export default function OracaoLimpeza() {
 
   return (
     <div className="limpeza-page">
-      <Header />
+      <Header compact />
       <div className="page-container">
         <div className="limpeza-page__intro fade-in">
           <div className="limpeza-page__icon">🛡️</div>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
 import api from '../services/api';
 import Header from '../components/layout/Header';
+import { IconCheck, IconLock } from '../components/ui/Icons';
 import './Jornada.css';
 
 export default function Jornada() {
@@ -39,7 +40,7 @@ export default function Jornada() {
 
   return (
     <div className="jornada-page">
-      <Header />
+      <Header compact />
       <div className="page-container">
         <h2 className="jornada-page__title">Sua Jornada de 21 Dias</h2>
         <div className="ornament">✦</div>
@@ -59,8 +60,8 @@ export default function Jornada() {
                     onClick={() => handleClick(dia)}
                     disabled={status === 'bloqueado'}
                   >
-                    {status === 'concluido' && <span className="jornada-page__check">✓</span>}
-                    {status === 'bloqueado' && <span className="jornada-page__lock">🔒</span>}
+                    {status === 'concluido' && <span className="jornada-page__check"><IconCheck size={14} /></span>}
+                    {status === 'bloqueado' && <span className="jornada-page__lock"><IconLock size={14} /></span>}
                     {(status === 'atual' || status === 'disponivel') && <span className="jornada-page__num">{dia}</span>}
                     {status === 'concluido' && <span className="jornada-page__num">{dia}</span>}
                   </button>
@@ -78,7 +79,7 @@ export default function Jornada() {
 
             {['Oração de Entrega Total', 'Meditação dos 7 Dons', 'Consagração Perpétua'].map((titulo, i) => (
               <div key={i} className="jornada-page__extra-card">
-                <span className="jornada-page__extra-lock">🔒</span>
+                <span className="jornada-page__extra-lock"><IconLock size={14} /></span>
                 <div className="jornada-page__extra-info">
                   <strong>{titulo}</strong>
                   <span>Este mistério aguarda sua consagração eterna</span>

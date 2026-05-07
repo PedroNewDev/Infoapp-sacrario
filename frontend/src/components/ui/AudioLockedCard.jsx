@@ -16,6 +16,7 @@ export default function AudioLockedCard({ dia, titulo }) {
         <div className="audio-locked-card__info">
           <strong>Meditação guiada do Dia {dia}</strong>
           <span>{titulo || 'Aprofunde este mistério com a voz que guia'}</span>
+          <small className="audio-locked-card__hint">Acesso exclusivo para membros · Adquira o Módulo de Áudio</small>
         </div>
       </div>
       <div className="audio-locked-card__wave">

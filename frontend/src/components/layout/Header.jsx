@@ -1,8 +1,8 @@
 import './Header.css';
 
-export default function Header({ showAvatar, onAvatarClick }) {
+export default function Header({ showAvatar, onAvatarClick, compact }) {
   return (
-    <header className="header">
+    <header className={`header${compact ? ' header--compact' : ''}`}>
       {showAvatar && (
         <button className="header__avatar" onClick={onAvatarClick} aria-label="Perfil">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -11,9 +11,11 @@ export default function Header({ showAvatar, onAvatarClick }) {
         </button>
       )}
       <div className="header__logo">
-        <div className="header__ostensorio-wrap">
-          <img src="/img/ostensorio.png" alt="" className="header__ostensorio" />
-        </div>
+        {!compact && (
+          <div className="header__ostensorio-wrap">
+            <img src="/img/ostensorio.png" alt="" className="header__ostensorio" />
+          </div>
+        )}
         <h1 className="header__title">Sacrário do Rosário</h1>
       </div>
     </header>

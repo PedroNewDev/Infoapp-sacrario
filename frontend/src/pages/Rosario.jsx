@@ -5,6 +5,7 @@ import { useUser } from '../context/UserContext';
 import Header from '../components/layout/Header';
 import Button from '../components/ui/Button';
 import ConversionCard from '../components/ui/ConversionCard';
+import { IconCheck, RoseIcon } from '../components/ui/Icons';
 import { misterios, ordemConjuntos, gerarContasConjunto } from '../content/oracoes';
 import './Rosario.css';
 
@@ -125,7 +126,7 @@ export default function Rosario() {
               ))}
             </div>
 
-            <div className="rosario-page__selo-conclusao">🌹</div>
+            <div className="rosario-page__selo-conclusao"><RoseIcon size={48} /></div>
 
             <h2>Rosário Completo!</h2>
             <p className="rosario-page__conclusao-frase">
@@ -151,7 +152,7 @@ export default function Rosario() {
             </div>
 
             <div className="rosario-page__conclusao-total-box">
-              <span>📿</span>
+              <span style={{ fontSize: 24, lineHeight: 1 }}>📿</span>
               <p>Total de Rosários rezados: <strong>{totalRosarios}</strong></p>
             </div>
 
@@ -194,7 +195,7 @@ export default function Rosario() {
 
   return (
     <div className="rosario-page">
-      <Header />
+      <Header compact />
       <div className="page-container">
         <h2 className="rosario-page__title fade-in">Rosário Virtual</h2>
         <p className="rosario-page__contador">Rosários rezados: {totalRosarios}</p>
@@ -226,7 +227,7 @@ export default function Rosario() {
                 setConjuntoAtual(i);
               }}
             >
-              {conjuntosConcluidos.includes(i) ? '✓ ' : ''}
+              {conjuntosConcluidos.includes(i) ? <><IconCheck size={12} /> </> : ''}
               {misterios[key].nome.replace('Mistérios ', '')}
             </button>
           ))}
@@ -269,7 +270,7 @@ export default function Rosario() {
                     key={i}
                     className={`rosario-page__conta ${rezada ? 'rosario-page__conta--rezada' : ''} ${atual ? 'rosario-page__conta--atual' : ''}`}
                   >
-                    {rezada ? '✓' : i + 1}
+                    {rezada ? <IconCheck size={14} /> : i + 1}
                   </div>
                 );
               })}

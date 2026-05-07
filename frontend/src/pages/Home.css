@@ -39,49 +39,60 @@
 .home__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
+  gap: 12px;
   margin-bottom: var(--space-md);
 }
 
 .home__card {
-  background: rgba(250, 246, 238, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(201, 147, 42, 0.22);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg) var(--space-sm) var(--space-md);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
+  overflow: hidden;
   box-shadow:
-    inset 0 2px 6px rgba(255, 255, 255, 0.7),
-    inset 0 -1px 3px rgba(185, 134, 11, 0.08),
-    0 4px 16px rgba(185, 134, 11, 0.14);
-  transition: all 0.2s;
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 4px 18px rgba(185, 134, 11, 0.16);
+  transition: transform 0.18s, box-shadow 0.18s;
   position: relative;
-  min-height: 120px;
-  justify-content: center;
-}
-.home__card:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow:
-    inset 0 2px 6px rgba(255, 255, 255, 0.7),
-    inset 0 -1px 3px rgba(185, 134, 11, 0.08),
-    0 8px 24px rgba(185, 134, 11, 0.22);
+  min-height: 158px;
+  -webkit-tap-highlight-color: transparent;
 }
 .home__card:active:not(:disabled) {
-  transform: translateY(0px);
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(185, 134, 11, 0.12);
 }
 .home__card--disabled {
-  opacity: 0.55;
+  opacity: 0.52;
   cursor: not-allowed;
 }
 
+/* Corpo do card (área da imagem/icon) */
+.home__card-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-sm) var(--space-sm);
+}
+
 .home__card-icon {
-  font-size: 34px;
+  font-size: 52px;
   display: block;
-  filter: drop-shadow(0 2px 4px rgba(185, 134, 11, 0.15));
+  filter: drop-shadow(0 3px 8px rgba(185, 134, 11, 0.22));
+  line-height: 1;
+}
+
+/* Rodapé do card (label) */
+.home__card-footer {
+  background: rgba(245, 237, 214, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(201, 147, 42, 0.15);
+  padding: 10px var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
 
 .home__card-label {
@@ -90,21 +101,62 @@
   font-weight: 600;
   color: var(--gold-dark);
   text-align: center;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .home__card-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: var(--gold-light);
-  color: var(--text-primary);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 10px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  background: rgba(201, 147, 42, 0.14);
+  padding: 1px 7px;
+  border-radius: 8px;
+}
+
+/* Seção "Em Breve" */
+.home__em-breve {
+  margin-bottom: var(--space-md);
+}
+
+.home__em-breve-heading {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: var(--space-sm);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.home__grid--em-breve {
+  opacity: 0.55;
+}
+
+/* Backgrounds temáticos por card */
+.home__card--rosario .home__card-body {
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(255, 235, 150, 0.55) 0%, rgba(212, 168, 67, 0.18) 55%, transparent 75%),
+    linear-gradient(160deg, rgba(250,246,238,0.95) 0%, rgba(240,225,195,0.92) 100%);
+}
+
+.home__card--oracao .home__card-body {
+  background:
+    radial-gradient(ellipse at 50% 55%, rgba(255, 220, 160, 0.52) 0%, rgba(201, 147, 42, 0.15) 50%, transparent 72%),
+    linear-gradient(160deg, rgba(252,248,240,0.95) 0%, rgba(245,232,208,0.92) 100%);
+}
+
+.home__card--sala .home__card-body {
+  background:
+    linear-gradient(to bottom, rgba(245,237,214,0.45) 0%, rgba(245,237,214,0.78) 100%),
+    url('/img/basilica.jpg') center 40%/cover no-repeat;
+}
+
+.home__card--biblioteca .home__card-body {
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(212, 180, 100, 0.40) 0%, rgba(185, 134, 11, 0.12) 50%, transparent 72%),
+    linear-gradient(160deg, rgba(252,246,234,0.95) 0%, rgba(242,228,198,0.92) 100%);
 }
 
 /* Destaque promocional — Biblioteca de Áudios Sagrados (discreto) */
@@ -254,6 +306,20 @@
 
 .home__limpeza-lock {
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.home__limpeza-lock small {
+  font-size: 10px;
+  color: var(--text-light);
+  font-weight: 400;
+  font-style: italic;
+}
+.home__limpeza-unlocked {
+  font-size: 12px;
+  color: var(--gold-primary);
+  font-weight: 600;
 }
 
 /* Cena devocional (santa + basílica + intenção) */
@@ -262,13 +328,13 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   margin-bottom: var(--space-md);
-  min-height: 160px;
+  min-height: 220px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   box-shadow:
-    0 4px 20px rgba(185, 134, 11, 0.2),
+    0 6px 24px rgba(185, 134, 11, 0.22),
     inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(201, 147, 42, 0.2);
+  border: 1px solid rgba(201, 147, 42, 0.22);
 }
 
 .home__cena-bg {
@@ -277,57 +343,67 @@
   background:
     linear-gradient(
       to right,
-      rgba(245, 237, 214, 0.35) 0%,
-      rgba(245, 237, 214, 0.65) 45%,
-      rgba(245, 237, 214, 0.82) 100%
+      rgba(245, 237, 214, 0.30) 0%,
+      rgba(245, 237, 214, 0.60) 38%,
+      rgba(245, 237, 214, 0.88) 100%
     ),
-    url('/img/basilica.jpg') center 30%/cover no-repeat;
+    url('/img/basilica.jpg') center 25%/cover no-repeat;
   z-index: 0;
 }
 
 .home__cena-santa {
   position: relative;
   z-index: 1;
-  width: 115px;
-  height: 175px;
+  width: 120px;
+  height: auto;
+  max-height: 200px;
   object-fit: contain;
-  object-position: top center;
+  object-position: center;
   mix-blend-mode: multiply;
-  align-self: flex-end;
   flex-shrink: 0;
-  margin-left: -6px;
-  filter: drop-shadow(3px 0 10px rgba(185, 134, 11, 0.18));
+  margin: var(--space-md) 0 var(--space-md) var(--space-sm);
+  filter: drop-shadow(4px 0 14px rgba(185, 134, 11, 0.22));
 }
 
 .home__cena-direita {
   position: relative;
   z-index: 1;
   flex: 1;
-  padding: var(--space-lg) var(--space-md) var(--space-lg) var(--space-sm);
+  padding: var(--space-lg) var(--space-md);
   display: flex;
   align-items: center;
-  min-height: 160px;
+  justify-content: center;
+  min-height: 180px;
 }
 
 .home__intencao-display {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
   cursor: pointer;
   width: 100%;
+  text-align: center;
+  padding: var(--space-sm);
+  background: rgba(250, 246, 238, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(201, 147, 42, 0.18);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .home__intencao-label {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--gold-primary);
 }
 
 .home__intencao-texto {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16px;
   font-style: italic;
   color: var(--text-primary);
   line-height: 1.4;
@@ -336,7 +412,7 @@
 .home__intencao-edit-icon {
   font-size: 13px;
   color: var(--gold-primary);
-  margin-top: 4px;
+  opacity: 0.7;
 }
 
 .home__intencao-edit {

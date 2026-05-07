@@ -10,6 +10,7 @@ import AudioPlayer from '../components/ui/AudioPlayer';
 import PreviewPlayer from '../components/ui/PreviewPlayer';
 import AudioLockedCard from '../components/ui/AudioLockedCard';
 import { useUser } from '../context/UserContext';
+import { IconBook, IconMusic, IconPlay, IconLock, IconCheck, IconCross, IconHeart } from '../components/ui/Icons';
 import './BibliotecaEspiritual.css';
 
 function CardAudio({ oracao, temAcesso }) {
@@ -19,7 +20,7 @@ function CardAudio({ oracao, temAcesso }) {
     <div className="biblioteca-audio-card">
       <button className="biblioteca-audio-card__header" onClick={() => setAberto(!aberto)}>
         <span className="biblioteca-audio-card__icone">
-          {temAcesso ? '🎵' : oracao.previewUrl ? '▶' : '🔒'}
+          {temAcesso ? <IconMusic size={20} /> : oracao.previewUrl ? <IconPlay size={20} /> : <IconLock size={20} />}
         </span>
         <div className="biblioteca-audio-card__meta">
           <span className="biblioteca-audio-card__titulo">{oracao.titulo}</span>
@@ -38,7 +39,7 @@ function CardAudio({ oracao, temAcesso }) {
           ) : oracao.previewUrl ? (
             <PreviewPlayer src={oracao.previewUrl} titulo={null} duracao={oracao.duracao} />
           ) : (
-            <p className="biblioteca-audio-card__bloqueado">🔒 Disponível no Módulo de Áudio Sacro</p>
+            <p className="biblioteca-audio-card__bloqueado"><IconLock size={14} /> Disponível no Módulo de Áudio Sacro</p>
           )}
         </div>
       )}
@@ -97,10 +98,10 @@ export default function BibliotecaEspiritual() {
 
   return (
     <div className="biblioteca-page">
-      <Header />
+      <Header compact />
       <div className="page-container">
         <div className="biblioteca-page__intro fade-in">
-          <div className="biblioteca-page__icon">📖</div>
+          <div className="biblioteca-page__icon"><IconBook size={32} /></div>
           <h2 className="biblioteca-page__title">Biblioteca Espiritual</h2>
           <div className="ornament">✦</div>
         </div>
@@ -108,7 +109,7 @@ export default function BibliotecaEspiritual() {
         {/* Seção de Áudio */}
         <div className="biblioteca-audio-section fade-in">
           <div className="biblioteca-audio-section__header">
-            <span className="biblioteca-audio-section__icon">🎵</span>
+            <span className="biblioteca-audio-section__icon"><IconMusic size={22} /></span>
             <div>
               <div className="biblioteca-audio-section__titulo">Orações em Áudio</div>
               <div className="biblioteca-audio-section__subtitulo">
@@ -116,7 +117,7 @@ export default function BibliotecaEspiritual() {
               </div>
             </div>
             {temModuloAudio && (
-              <span className="biblioteca-audio-section__badge">✓ Ativo</span>
+              <span className="biblioteca-audio-section__badge"><IconCheck size={12} /> Ativo</span>
             )}
           </div>
 
@@ -131,13 +132,13 @@ export default function BibliotecaEspiritual() {
           )}
         </div>
 
-        <SecaoColapsavel icone="🙏" titulo="Orações Tradicionais" contagem={oracoesTradicionais.length}>
+        <SecaoColapsavel icone="📿" titulo="Orações Tradicionais" contagem={oracoesTradicionais.length}>
           {oracoesTradicionais.map(o => (
             <CardOracao key={o.id} titulo={o.titulo} texto={o.texto} />
           ))}
         </SecaoColapsavel>
 
-        <SecaoColapsavel icone="💛" titulo="Orações Especiais" contagem={oracoesEspeciais.length}>
+        <SecaoColapsavel icone="🙏" titulo="Orações Especiais" contagem={oracoesEspeciais.length}>
           {oracoesEspeciais.map(o => (
             <CardOracao key={o.id} titulo={o.titulo} texto={o.texto} />
           ))}

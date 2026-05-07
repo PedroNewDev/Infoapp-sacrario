@@ -19,12 +19,14 @@
   gap: 6px;
   margin-bottom: var(--space-lg);
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
   padding-bottom: 4px;
   -webkit-overflow-scrolling: touch;
 }
 
 .rosario-page__misterio-btn {
   flex-shrink: 0;
+  scroll-snap-align: start;
   padding: 8px 14px;
   border-radius: var(--radius-xl);
   background: var(--bg-card);

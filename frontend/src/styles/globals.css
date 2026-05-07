@@ -69,9 +69,25 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
   background-image:
-    linear-gradient(rgba(245, 237, 214, 0.72), rgba(245, 237, 214, 0.72)),
+    /* Parchment texture overlay */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 115, 85, 0.03) 2px,
+      rgba(139, 115, 85, 0.03) 4px
+    ),
+    /* Aged paper spots */
+    radial-gradient(ellipse at 15% 30%, rgba(200, 168, 130, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 70%, rgba(200, 168, 130, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 90%, rgba(180, 156, 114, 0.08) 0%, transparent 40%),
+    /* Basílica overlay */
+    linear-gradient(rgba(245, 237, 214, 0.82), rgba(245, 237, 214, 0.82)),
     url('/img/basilica.jpg');
-  background-size: cover;
+  background-size:
+    4px 4px,
+    cover, cover, cover,
+    cover, cover;
   background-attachment: fixed;
   background-position: center top;
   color: var(--text-primary);
@@ -193,11 +209,24 @@ img {
   background: linear-gradient(to right, transparent, var(--gold-light), transparent);
 }
 
-/* Container padrão mobile-first */
+/* Container padrão mobile-first — like a book page */
 .page-container {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
   padding: var(--space-md);
   padding-bottom: calc(var(--tab-height) + var(--space-lg));
+  position: relative;
+}
+
+#root .page-container {
+  background:
+    /* Subtle paper texture */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      rgba(139, 115, 85, 0.02) 1px,
+      rgba(139, 115, 85, 0.02) 2px
+    );
 }

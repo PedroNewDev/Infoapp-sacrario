@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import api from '../services/api';
 import Header from '../components/layout/Header';
 import Button from '../components/ui/Button';
+import { IconHeart } from '../components/ui/Icons';
 import './Comunidade.css';
 
 function formatarData(dataStr) {
@@ -104,7 +105,7 @@ function AbaPedidos() {
       <div className="comunidade-feed">
         {pedidos.length === 0 ? (
           <div className="comunidade-feed__vazio">
-            Nenhum pedido de oração ainda. Seja a primeira a pedir!
+            Nenhum pedido de oração ainda. Seja o(a) primeiro(a) a pedir!
           </div>
         ) : (
           pedidos.map(p => (
@@ -119,7 +120,7 @@ function AbaPedidos() {
                   className={`comunidade-pedido__rezando-btn ${rezandoPor.has(p.id) ? 'comunidade-pedido__rezando-btn--active' : ''}`}
                   onClick={() => rezarPor(p.id)}
                 >
-                  🙏 {rezandoPor.has(p.id) ? 'Rezando' : 'Estou rezando'}
+                  <IconHeart size={14} /> {rezandoPor.has(p.id) ? 'Rezando' : 'Estou rezando'}
                 </button>
                 <span className="comunidade-pedido__contador">
                   {p.contador_rezando} {p.contador_rezando === 1 ? 'pessoa rezando' : 'pessoas rezando'}
@@ -203,10 +204,10 @@ export default function Comunidade() {
 
   return (
     <div className="comunidade-page">
-      <Header />
+      <Header compact />
       <div className="page-container">
         <div className="comunidade-page__intro fade-in">
-          <div className="comunidade-page__icon">🙏</div>
+          <div className="comunidade-page__icon"><IconHeart size={32} /></div>
           <h2 className="comunidade-page__title">Comunidade de Oração</h2>
           <div className="ornament">✦</div>
         </div>

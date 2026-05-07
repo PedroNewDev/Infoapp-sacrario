@@ -97,12 +97,12 @@
 
 .header__title {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 400;
   font-style: italic;
   color: var(--gold-dark);
   text-align: center;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   text-shadow: 0 1px 4px rgba(185, 134, 11, 0.2);
 }
 
@@ -126,4 +126,13 @@
 .header__avatar:active {
   background: rgba(201, 147, 42, 0.1);
   transform: scale(0.93);
+}
+
+/* Compact mode (internal pages) */
+.header--compact {
+  padding: var(--space-sm) var(--space-md);
+  padding-top: var(--space-lg);
+}
+.header--compact .header__title {
+  font-size: 20px;
 }

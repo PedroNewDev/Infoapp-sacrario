@@ -10,6 +10,7 @@ import PerfilPanel from '../components/ui/PerfilPanel';
 import ConversionCard from '../components/ui/ConversionCard';
 import IconSacro from '../components/ui/IconSacro';
 import { oracoesAudio } from '../content/biblioteca';
+import { IconHeadphones, IconLock, IconCheck, IconPen } from '../components/ui/Icons';
 import './Home.css';
 
 const PAYT_AUDIO_URL = 'https://pay.exemplo.com.br/audio';
@@ -38,10 +39,10 @@ export default function Home() {
   const jornadaCompleta = progresso?.jornadaCompleta || false;
 
   const cards = [
-    { label: 'Rosário Virtual', icon: '📿', path: '/rosario' },
-    { label: 'Pedidos de Oração', icon: '🙏', path: '/comunidade' },
-    { label: 'Sala de Oração Ao Vivo', icon: '⛪', path: null, emBreve: true },
-    { label: 'Biblioteca Espiritual', icon: '📖', path: '/biblioteca' },
+    { label: 'Rosário Virtual',        icon: '📿', path: '/rosario',    bgClass: 'home__card--rosario' },
+    { label: 'Pedidos de Oração',      icon: '🙏', path: '/comunidade', bgClass: 'home__card--oracao' },
+    { label: 'Sala de Oração Ao Vivo', icon: '⛪', path: null, emBreve: true, bgClass: 'home__card--sala' },
+    { label: 'Biblioteca Espiritual',  icon: '📖', path: '/biblioteca', bgClass: 'home__card--biblioteca' },
   ];
 
   const audioPreview = oracoesAudio.find(a => a.previewUrl);
@@ -68,7 +69,7 @@ export default function Home() {
         )}
 
         <div className="home__welcome fade-in">
-          <h2 className="home__greeting">Bem-vinda, {usuario?.nome?.split(' ')[0]}</h2>
+          <h2 className="home__greeting">Bem-vindo(a), {usuario?.nome?.split(' ')[0]}</h2>
           <div className="ornament">✦</div>
 
           {jornadaCompleta ? (
@@ -89,7 +90,7 @@ export default function Home() {
               <p className="home__day">Dia {diaAtual} de 21</p>
               <ProgressBar percentual={percentual} />
               <SparkleButton onClick={() => navigate(`/jornada/${diaAtual}`)} fullWidth>
-                CONTINUAR DIA {diaAtual} »
+                Continuar Dia {diaAtual} »
               </SparkleButton>
             </>
           )}
@@ -125,19 +126,45 @@ export default function Home() {
         )}
 
         <div className="home__grid fade-in">
-          {cards.map(card => (
+          {cards.filter(c => !c.emBreve).map(card => (
             <button
               key={card.label}
-              className={`home__card ${card.emBreve ? 'home__card--disabled' : ''}`}
+              className={`home__card ${card.bgClass}`}
               onClick={() => card.path && navigate(card.path)}
-              disabled={card.emBreve}
             >
-              <span className="home__card-icon">{card.icon}</span>
-              <span className="home__card-label">{card.label}</span>
-              {card.emBreve && <span className="home__card-badge">Em Breve</span>}
+              <div className="home__card-body">
+                <span className="home__card-icon">
+{card.icon}
+                </span>
+              </div>
+              <div className="home__card-footer">
+                <span className="home__card-label">{card.label}</span>
+              </div>
             </button>
           ))}
         </div>
+
+        {/* Seção "Em Breve" */}
+        {cards.filter(c => c.emBreve).length > 0 && (
+          <div className="home__em-breve fade-in">
+            <h3 className="home__em-breve-heading">Em breve</h3>
+            <div className="home__grid home__grid--em-breve">
+              {cards.filter(c => c.emBreve).map(card => (
+                <div key={card.label} className={`home__card ${card.bgClass} home__card--disabled`}>
+                  <div className="home__card-body">
+                    <span className="home__card-icon">
+                      {card.bgClass === 'home__card--sala' ? '⛪' : card.icon}
+                    </span>
+                  </div>
+                  <div className="home__card-footer">
+                    <span className="home__card-label">{card.label}</span>
+                    <span className="home__card-badge">Em Breve</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Destaque: Biblioteca de Áudios Sagrados */}
         {temModuloAudio ? (
@@ -145,7 +172,7 @@ export default function Home() {
             className="home__audio-unlocked fade-in"
             onClick={() => navigate('/biblioteca?secao=audio')}
           >
-            <span className="home__audio-unlocked-icon">🎧</span>
+            <span className="home__audio-unlocked-icon"><IconHeadphones size={24} /></span>
             <div className="home__audio-unlocked-text">
               <strong>Minha Biblioteca de Áudios Sagrados</strong>
               <span>{oracoesAudio.length} orações gravadas · tocar agora »</span>
@@ -154,7 +181,7 @@ export default function Home() {
         ) : (
           <div className="home__audio-promo fade-in">
             <div className="home__audio-promo-header">
-              <span className="home__audio-promo-icon">🎧</span>
+              <span className="home__audio-promo-icon"><IconHeadphones size={24} /></span>
               <div className="home__audio-promo-head-text">
                 <h3 className="home__audio-promo-title">Orações em Áudio Sagrado</h3>
                 <p className="home__audio-promo-sub">
@@ -187,7 +214,11 @@ export default function Home() {
           <span className="home__limpeza-icon">🕯️</span>
           <div className="home__limpeza-text">
             <strong>Oração de Limpeza e Proteção</strong>
-            {!usuario?.upsell_limpeza && <span className="home__limpeza-lock">🔒</span>}
+            {!usuario?.upsell_limpeza ? (
+              <span className="home__limpeza-lock"><IconLock size={14} /> <small>Disponível para membros</small></span>
+            ) : (
+              <span className="home__limpeza-unlocked"><IconCheck size={14} /> Desbloqueado</span>
+            )}
           </div>
         </button>
 
@@ -212,13 +243,13 @@ export default function Home() {
                   maxLength={250}
                   autoFocus
                 />
-                <button onClick={salvarIntencao}>✓</button>
+                <button onClick={salvarIntencao}><IconCheck size={18} /></button>
               </div>
             ) : (
               <div className="home__intencao-display" onClick={() => setEditandoIntencao(true)}>
                 <span className="home__intencao-label">Minha Intenção</span>
                 <span className="home__intencao-texto">{usuario?.intencao_principal || 'Toque para definir'}</span>
-                <span className="home__intencao-edit-icon">✎</span>
+                <span className="home__intencao-edit-icon"><IconPen size={14} /></span>
               </div>
             )}
           </div>

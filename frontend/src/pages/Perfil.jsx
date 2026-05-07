@@ -50,7 +50,7 @@ export default function Perfil() {
   if (carregando) {
     return (
       <div className="perfil-page">
-        <Header />
+        <Header compact />
         <div className="page-container" style={{ display: 'flex', justifyContent: 'center', paddingTop: 80 }}>
           <div className="loading-spinner" />
         </div>
@@ -60,7 +60,7 @@ export default function Perfil() {
 
   return (
     <div className="perfil-page">
-      <Header />
+      <Header compact />
       <div className="page-container">
         <h1 className="perfil-page__title fade-in">Meu Perfil</h1>
 

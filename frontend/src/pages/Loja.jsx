@@ -22,7 +22,7 @@ export default function Loja() {
 
   return (
     <div className="loja-page">
-      <Header />
+      <Header compact />
       <div className="page-container">
         <div className="loja-page__content fade-in">
           <div className="loja-page__icon">🛍️</div>

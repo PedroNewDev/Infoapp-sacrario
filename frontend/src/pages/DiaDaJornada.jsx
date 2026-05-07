@@ -7,6 +7,7 @@ import AudioPlayer from '../components/ui/AudioPlayer';
 import AudioLockedCard from '../components/ui/AudioLockedCard';
 import ConversionCard from '../components/ui/ConversionCard';
 import Button from '../components/ui/Button';
+import { IconCheck, RoseIcon } from '../components/ui/Icons';
 import './DiaDaJornada.css';
 
 export default function DiaDaJornada() {
@@ -73,7 +74,7 @@ export default function DiaDaJornada() {
       {showCelebration && (
         <div className="dia-page__celebration">
           <div className="dia-page__celebration-content fade-in">
-            <span style={{ fontSize: 64 }}>✓</span>
+            <span style={{ fontSize: 64 }}><IconCheck size={64} /></span>
             <h2>Dia {dia} Concluído!</h2>
             <p>Maria sorriu por cada Ave Maria que você rezou hoje.</p>
           </div>
@@ -129,11 +130,11 @@ export default function DiaDaJornada() {
           <div className="dia-page__intencao fade-in">
             <h3>Minha Intenção Hoje</h3>
             {concluido ? (
-              <p className="dia-page__intencao-salva">Dia concluído ✓</p>
+              <p className="dia-page__intencao-salva">Dia concluído <IconCheck size={14} /></p>
             ) : (
               <>
                 <div className="dia-page__intencao-field">
-                  <span className="dia-page__intencao-icon">🌹</span>
+                  <span className="dia-page__intencao-icon"><RoseIcon size={20} /></span>
                   <textarea
                     value={intencao}
                     onChange={e => setIntencao(e.target.value)}
